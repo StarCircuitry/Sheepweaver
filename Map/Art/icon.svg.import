@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brju5rcpb26vk"
-path="res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"
+uid="uid://bpptju3jx1wxi"
+path="res://.godot/imported/icon.svg-95b2613447280b2b1d8bd50e638b0abb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Sprites/LinenTiles.png"
-dest_files=["res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"]
+source_file="res://Map/Art/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-95b2613447280b2b1d8bd50e638b0abb.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

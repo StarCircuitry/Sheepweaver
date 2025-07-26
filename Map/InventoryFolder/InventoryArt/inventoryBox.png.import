@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brju5rcpb26vk"
-path="res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"
+uid="uid://fne4wvj2ygl8"
+path="res://.godot/imported/inventoryBox.png-ea27af2a37382be3b1bf982a661c2b68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Sprites/LinenTiles.png"
-dest_files=["res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"]
+source_file="res://Map/InventoryFolder/InventoryArt/inventoryBox.png"
+dest_files=["res://.godot/imported/inventoryBox.png-ea27af2a37382be3b1bf982a661c2b68.ctex"]
 
 [params]
 

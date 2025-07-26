@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brju5rcpb26vk"
-path="res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"
+uid="uid://crs1gk4vhkegd"
+path="res://.godot/imported/mockmap.png-bed40756321d82a2b3d02ddff06367a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Sprites/LinenTiles.png"
-dest_files=["res://.godot/imported/LinenTiles.png-77fcf95de5df1195416beb94aed38d1f.ctex"]
+source_file="res://Map/Art/mockmap.png"
+dest_files=["res://.godot/imported/mockmap.png-bed40756321d82a2b3d02ddff06367a5.ctex"]
 
 [params]
 

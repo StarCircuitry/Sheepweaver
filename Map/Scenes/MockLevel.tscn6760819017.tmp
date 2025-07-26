@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://yk63eaqej7e3"]
+
+[ext_resource type="Texture2D" uid="uid://crr44l50vgos1" path="res://placeholderMap.png" id="1_l7oe3"]
+[ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Scenes/Character.tscn" id="2_bkb0i"]
+[ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Scenes/Collectible.tscn" id="3_ibqig"]
+
+[node name="MockLevel" type="Node2D"]
+
+[node name="PlaceholderMap" type="Sprite2D" parent="."]
+texture = ExtResource("1_l7oe3")
+
+[node name="Collectible" parent="." instance=ExtResource("3_ibqig")]
+position = Vector2(-21, -13)
+
+[node name="Character" parent="." instance=ExtResource("2_bkb0i")]
+position = Vector2(-1, 1)

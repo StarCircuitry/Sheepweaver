@@ -8,13 +8,20 @@ var mouseColor = Vector3(1., 1., 1.)
 var mouseTile = Vector2i()
 var layerCount = -1
 var threads = []
+
+## Shader Stuff	##
 const DEFAULT_LAYER = preload("res://thread_layer.tscn")
-const COTTON_MATERIAL = preload("res://cotton_color.gdshader")
-const LINEN_MATERIAL = preload("res://thread_layer.tscn::ShaderMaterial_4kbh8")
-const WOOL_MATERIAL = preload("res://wool_color.gdshader")
 
+const COTTON_MATERIAL = preload("res://Materials/cotton_color.tres")
+const LINEN_MATERIAL = preload("res://Materials/linen_color.tres")
+const WOOL_MATERIAL = preload("res://Materials/wool_color.tres")
 
-const SHADERS = [COTTON_MATERIAL, LINEN_MATERIAL, WOOL_MATERIAL]
+const RED_COLOR = Vector3(1., 0., 0.)
+const GREEN_COLOR = Vector3(0., 1., 0.)
+const BLUE_COLOR = Vector3(0., 0., 1.)
+
+# Also read in the inventory file
+
 
 var goalPattern = []
 var GridStates = []
@@ -24,7 +31,6 @@ const FRAME_ROW = 1
 const FRAME_VERT_OFFSET = 1
 const PEG_ROW = 0
 const PEG_COL = 0
-
 
 ## BUTTON LOCATIONS ##
 const mat1Pos = Vector2i(11, 4)
@@ -63,7 +69,7 @@ func initializeGridData() -> void:
 			else:
 				LoomGrid[col].append(EMPTY)
 	GridStates.append(LoomGrid.duplicate(true))
-	goalPattern = LoomGrid.duplicate(true)
+	
 
 func displayGridData() -> void:
 	for col in range(GridWidth):
@@ -93,12 +99,14 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if (mouseTile == mat1Pos || mouseTile == mat2Pos || mouseTile == mat3Pos):
 			GrabResource()
+		elif (mouseTile == color1Pos|| mouseTile == color2Pos):
+			ApplyColor()
 		elif (mouseTile == undoPos):
 			UndoMove()
 		elif (mouseTile == checkmePos):
-			CheckMe()
+			DisplayGoalPattern()
 		elif (mouseTile == toMapButton):
-			print("Going exploring...")
+			MoveToMap()
 		elif ((mouseTile.y == 0 && mouseTile.x == 0) ||
 		(mouseTile.x > GridWidth || mouseTile.y > GridHeight)):
 			pass
@@ -161,14 +169,44 @@ func UndoMove() -> void:
 
 func GrabResource() -> void:
 	mouseValue = get_cell_source_id(mouseTile)
+	
 
 func ApplyColor() -> void:
-	if (mouseValue == LINEN):
-		SHADERS[1].set_shader_parameter("fabricColor1", Vector3(0.5, 0., 0.))
-	pass
-#	var cellID = 
-	
+	if (mouseTile == color1Pos):
+		mouseColor = BLUE_COLOR
+	elif (mouseTile == color2Pos):
+		mouseColor = RED_COLOR
+	if (mouseValue == COTTON):
+		COTTON_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
+	elif (mouseValue == LINEN):
+		LINEN_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
+	elif (mouseValue == WOOL):
+		WOOL_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
+		
 
 func CheckMe() -> void:
 	if (LoomGrid == goalPattern):
 		set_cell(checkmePos, LOOM_FRAME, Vector2i(0, 0), 0)
+
+func MoveToMap() -> void:
+	print("Going exploring...")
+	
+
+func AdjustFrame() -> void:
+	pass
+
+func DisplayGoalPattern() -> void:
+	goalPattern = LoomGrid.duplicate(true)
+	var goal_layer = DEFAULT_LAYER.instantiate()
+	add_child(goal_layer)
+	goal_layer.top_level = true
+	goal_layer.modulate.a = 0.5
+	
+	for col in range(GridWidth):
+		for row in range(GridHeight):
+			goal_layer.erase_cell(Vector2i(col, row))
+			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)
+
+	
+	
+	pass
