@@ -1,15 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlkrrbgbclyig"]
+[gd_scene load_steps=3 format=3 uid="uid://dlkrrbgbclyig"]
 
 [ext_resource type="Script" uid="uid://vt8xux1rlp1o" path="res://main_test.gd" id="1_83wws"]
 [ext_resource type="PackedScene" uid="uid://dek7fr7d7dij5" path="res://UI-Iterations/menuUI-v1.tscn" id="2_l805c"]
-[ext_resource type="PackedScene" uid="uid://b710q7bipet2j" path="res://scenes/day1-intro.tscn" id="3_2m0cn"]
-[ext_resource type="PackedScene" uid="uid://b3yaaxbhhiomf" path="res://scenes/day1-work.tscn" id="4_e4f8i"]
 
 [node name="MainTest" type="Node2D"]
 script = ExtResource("1_83wws")
 
-[node name="MenuUi-v1" parent="." instance=ExtResource("2_l805c")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Day1-intro" parent="." instance=ExtResource("3_2m0cn")]
-
-[node name="Day1-work" parent="." instance=ExtResource("4_e4f8i")]
+[node name="MenuUi-v1" parent="CanvasLayer" instance=ExtResource("2_l805c")]

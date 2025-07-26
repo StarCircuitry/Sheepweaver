@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cs46cclimslfc"
+path="res://.godot/imported/Day1-work05.dialogue-5a0575f64f981e3a1645cced5e65b5ab.tres"
+
+[deps]
+
+source_file="res://Dialogue/Day1-work05.dialogue"
+dest_files=["res://.godot/imported/Day1-work05.dialogue-5a0575f64f981e3a1645cced5e65b5ab.tres"]
+
+[params]
+
+defaults=true

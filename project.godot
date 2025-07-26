@@ -27,6 +27,7 @@ runtime/balloon_path="res://Dialogue/balloon.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [editor]
@@ -40,4 +41,4 @@ enabled=PackedStringArray("res://addons/auto_expand_inspector/plugin.cfg", "res:
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Day1-startV1.dialogue", "res://Dialogue/Day1-startV2.dialogue", "res://Dialogue/Day1-workV1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Day1-work01.dialogue", "res://Dialogue/oldDialogue/Day1-startV1.dialogue", "res://Dialogue/Day1-intro01.dialogue", "res://Dialogue/Day1-work02.dialogue", "res://Dialogue/Day1-work03.dialogue", "res://Dialogue/Day1-work04.dialogue", "res://Dialogue/Day1-work05.dialogue", "res://Dialogue/Day1-merchant01.dialogue", "res://Dialogue/Day1-ass01.dialogue", "res://Dialogue/TheEnd.dialogue")

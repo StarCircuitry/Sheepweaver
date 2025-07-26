@@ -1,0 +1,4 @@
+~ start
+[speed=0.1][b][[The End|Fin|That's all folks!]][/b]
+do get_tree().quit()
+=> END
