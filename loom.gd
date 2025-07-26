@@ -4,6 +4,7 @@ var GridWidth = 10
 var GridHeight = 10
 var LoomGrid = []
 var mouseValue = 0
+var mouseColor = Vector3(1., 1., 1.)
 var mouseTile = Vector2i()
 var layerCount = -1
 var threads = []
@@ -40,10 +41,10 @@ const LOOM_PEG = 5
 const BLUE = 6
 const RED = 7
 
-## TILESET VARIANT INDICES
-const VERTICAL = 0		# y index
-const HORIZONTAL = 1		# y index
-const NUM_VARIANTS = 0	# Can use this to generate random wtihin a range
+## TILESET VARIANT INDICES	##
+const VERTICAL_VARIANTS = [0, 2, 4, 6, 8]		# x index
+const HORIZONTAL_VARIANTS = [1, 3, 5, 7, 9]		# y index
+const NUM_VARIANTS = 5	# Can use this to generate random wtihin a range
 
 func initializeGridData() -> void:
 	for col in range(GridWidth):
@@ -63,7 +64,6 @@ func displayGridData() -> void:
 		for row in range(GridHeight):
 			erase_cell(Vector2i(col, row))
 			set_cell(Vector2(col, row), LoomGrid[col][row], Vector2(0, 0), 0)
-
 
 func _ready() -> void:
 	initializeGridData()
@@ -96,7 +96,7 @@ func _input(event):
 		elif ((mouseTile.y == 0 && mouseTile.x == 0) ||
 		(mouseTile.x > GridWidth || mouseTile.y > GridHeight)):
 			pass
-		elif (mouseTile.y == 0 && (mouseValue in range(2, 5))):	
+		elif (mouseTile.y == 0 && (mouseValue in range(3, 5))):	
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -107,8 +107,19 @@ func _input(event):
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
 				Vector2(0, 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
+		elif (mouseTile.y == 0 && (mouseValue == COTTON)):
+			layerCount += 1
+			var new_layer = DEFAULT_LAYER.instantiate()
+			add_child(new_layer)
+			threads.append(new_layer)
+			
+			for row in range(2, GridHeight-1):
+				LoomGrid[mouseTile.x][row] = mouseValue
+				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
+				Vector2(VERTICAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
+			GridStates.append(LoomGrid.duplicate(true))
 				
-		elif (mouseTile.x == 0):
+		elif (mouseTile.x == 0 && mouseValue in range(3, 5)):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -118,6 +129,17 @@ func _input(event):
 				LoomGrid[col][mouseTile.y] = mouseValue
 				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
 				Vector2(0, 0), 0)
+			GridStates.append(LoomGrid.duplicate(true))
+		elif (mouseTile.x == 0 && mouseValue == COTTON):
+			layerCount += 1
+			var new_layer = DEFAULT_LAYER.instantiate()
+			add_child(new_layer)
+			threads.append(new_layer)
+			
+			for col in range(1, GridWidth):
+				LoomGrid[col][mouseTile.y] = mouseValue
+				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
+				Vector2(HORIZONTAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
 
 func UndoMove() -> void:
@@ -134,8 +156,11 @@ func UndoMove() -> void:
 func GrabResource() -> void:
 	mouseValue = get_cell_source_id(mouseTile)
 
+func ApplyColor() -> void:
+	pass
+#	var cellID = 
+	
+
 func CheckMe() -> void:
 	if (LoomGrid == goalPattern):
 		set_cell(checkmePos, LOOM_FRAME, Vector2i(0, 0), 0)
-	
-	

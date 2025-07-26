@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://ycpuexrfjelg"]
+[gd_scene load_steps=23 format=3 uid="uid://ycpuexrfjelg"]
 
 [ext_resource type="Texture2D" uid="uid://ca3k8h2q7hil8" path="res://BlankTileSmall.png" id="1_3ptti"]
+[ext_resource type="Shader" uid="uid://cakt8iiir1ieh" path="res://weave_colors.gdshader" id="1_6eiy4"]
 [ext_resource type="Script" uid="uid://dkj7vcx1nd1m6" path="res://loom.gd" id="1_l5ywt"]
 [ext_resource type="Texture2D" uid="uid://buf528s21kvxi" path="res://LoomTileSmall.png" id="2_qm2fq"]
 [ext_resource type="Texture2D" uid="uid://c2cwyl3jyd3cm" path="res://BlueTileSmall.png" id="3_7j0wo"]
+[ext_resource type="Texture2D" uid="uid://bkx4x1eja80ek" path="res://Game Sprites/CottonTiles.png" id="3_jdf5i"]
 [ext_resource type="Texture2D" uid="uid://baocxfo20aieo" path="res://RedTileSmall.png" id="4_b8ej6"]
 [ext_resource type="Texture2D" uid="uid://bbjx8mx4ysk8q" path="res://Game Sprites/LinenBase.png" id="4_csw54"]
 [ext_resource type="Texture2D" uid="uid://ck1p0jyyc0erm" path="res://Game Sprites/WoolBase.png" id="5_6eiy4"]
@@ -20,11 +22,31 @@ texture = ExtResource("2_qm2fq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdf5i"]
+shader = ExtResource("1_6eiy4")
+shader_parameter/fabricColor1 = Color(1, 0, 0, 1)
+shader_parameter/fabricColor2 = Color(0.5, 0, 0, 1)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8ej6"]
 texture = ExtResource("6_7j0wo")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 2
 0:0/0 = 0
+0:0/0/material = SubResource("ShaderMaterial_jdf5i")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3lu3"]
+texture = ExtResource("3_jdf5i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lapn4"]
 texture = ExtResource("4_csw54")
@@ -55,12 +77,13 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_csw54")
 sources/1 = SubResource("TileSetAtlasSource_6eiy4")
-sources/2 = SubResource("TileSetAtlasSource_b8ej6")
 sources/7 = SubResource("TileSetAtlasSource_jrupu")
 sources/6 = SubResource("TileSetAtlasSource_jdf5i")
 sources/5 = SubResource("TileSetAtlasSource_7j0wo")
 sources/3 = SubResource("TileSetAtlasSource_lapn4")
 sources/4 = SubResource("TileSetAtlasSource_4r0su")
+sources/10 = SubResource("TileSetAtlasSource_b8ej6")
+sources/2 = SubResource("TileSetAtlasSource_h3lu3")
 
 [node name="Loom" type="TileMapLayer"]
 tile_set = SubResource("TileSet_l5ywt")
