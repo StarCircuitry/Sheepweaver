@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2xcpf4spmy6w"]
+[gd_scene load_steps=18 format=3 uid="uid://d2xcpf4spmy6w"]
 
 [ext_resource type="Texture2D" uid="uid://ca3k8h2q7hil8" path="res://BlankTileSmall.png" id="1_gr2tu"]
 [ext_resource type="Texture2D" uid="uid://c2cwyl3jyd3cm" path="res://BlueTileSmall.png" id="2_l2wc0"]
 [ext_resource type="Texture2D" uid="uid://buf528s21kvxi" path="res://LoomTileSmall.png" id="2_muj6s"]
+[ext_resource type="Texture2D" uid="uid://blxi32yrjiqsx" path="res://Game Sprites/CottonBase.png" id="3_45uir"]
 [ext_resource type="Texture2D" uid="uid://baocxfo20aieo" path="res://RedTileSmall.png" id="4_0tgb1"]
+[ext_resource type="Texture2D" uid="uid://bbjx8mx4ysk8q" path="res://Game Sprites/LinenBase.png" id="4_klv34"]
+[ext_resource type="Texture2D" uid="uid://ck1p0jyyc0erm" path="res://Game Sprites/WoolBase.png" id="5_2t3xf"]
+[ext_resource type="Texture2D" uid="uid://cfdmc2yolikcq" path="res://Peg.png" id="6_4kbh8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muj6s"]
 texture = ExtResource("1_gr2tu")
@@ -12,6 +16,26 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4oeh"]
 texture = ExtResource("2_muj6s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2dhw"]
+texture = ExtResource("3_45uir")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcvht"]
+texture = ExtResource("4_klv34")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj7cr"]
+texture = ExtResource("5_2t3xf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve5gb"]
+texture = ExtResource("6_4kbh8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -29,8 +53,12 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_muj6s")
 sources/1 = SubResource("TileSetAtlasSource_n4oeh")
-sources/2 = SubResource("TileSetAtlasSource_0tgb1")
-sources/3 = SubResource("TileSetAtlasSource_gik3r")
+sources/6 = SubResource("TileSetAtlasSource_0tgb1")
+sources/7 = SubResource("TileSetAtlasSource_gik3r")
+sources/2 = SubResource("TileSetAtlasSource_b2dhw")
+sources/3 = SubResource("TileSetAtlasSource_dcvht")
+sources/4 = SubResource("TileSetAtlasSource_xj7cr")
+sources/5 = SubResource("TileSetAtlasSource_ve5gb")
 
 [node name="ThreadLayer" type="TileMapLayer"]
 tile_set = SubResource("TileSet_s4fmq")
