@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://78lgo5x8gntn"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_syv32"]
+[ext_resource type="Resource" uid="uid://hgj2xp1a6cdg" path="res://Map/InventoryFolder/Items/WoolTemp.tres" id="2_thmg7"]
+[ext_resource type="Script" uid="uid://o0mbiyps48io" path="res://Map/InventoryFolder/Scripts/Inventory.gd" id="3_thmg7"]
+
+[resource]
+script = ExtResource("3_thmg7")
+items = Array[ExtResource("1_syv32")]([ExtResource("2_thmg7"), ExtResource("2_thmg7"), null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://o0mbiyps48io"

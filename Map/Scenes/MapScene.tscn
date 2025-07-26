@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://yk63eaqej7e3"]
+
+[ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
+[ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="3_ibqig"]
+[ext_resource type="Resource" uid="uid://cnfhhn5hedvlb" path="res://Map/InventoryFolder/Items/Leaf.tres" id="3_tjtk6"]
+[ext_resource type="Resource" uid="uid://dx8bpqcb0johc" path="res://Map/InventoryFolder/Items/PinkStar.tres" id="4_0nun1"]
+[ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="4_5b7x6"]
+[ext_resource type="Texture2D" uid="uid://crs1gk4vhkegd" path="res://Map/Art/mockmap.png" id="4_lolls"]
+[ext_resource type="Resource" uid="uid://cwlyu8xvphhx" path="res://Map/InventoryFolder/Items/Smiley.tres" id="5_n3t2o"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("2_bkb0i")]
+position = Vector2(-1, 1)
+
+[node name="Collectible" parent="." instance=ExtResource("3_ibqig")]
+position = Vector2(-42, -31)
+item = ExtResource("3_tjtk6")
+
+[node name="Collectible2" parent="." instance=ExtResource("3_ibqig")]
+position = Vector2(56, 38)
+item = ExtResource("4_0nun1")
+
+[node name="Collectible3" parent="." instance=ExtResource("3_ibqig")]
+position = Vector2(-21, 29)
+item = ExtResource("5_n3t2o")
+
+[node name="ReturnHome" parent="." instance=ExtResource("4_5b7x6")]
+position = Vector2(72, -49)
+
+[node name="Mockmap" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-2, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lolls")

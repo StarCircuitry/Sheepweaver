@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://hgj2xp1a6cdg"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_wy7c0"]
+[ext_resource type="Texture2D" uid="uid://cmyossxb4jcjb" path="res://Map/Art/woolTemp.png" id="2_fsd3f"]
+
+[resource]
+script = ExtResource("1_wy7c0")
+name = "Wool"
+texture = ExtResource("2_fsd3f")
+metadata/_custom_type_script = "uid://n8ohioq7a1bp"
