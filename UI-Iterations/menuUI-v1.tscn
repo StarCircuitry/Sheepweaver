@@ -108,7 +108,7 @@ offset_bottom = 121.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("7_q6uvb")
 theme_override_font_sizes/font_size = 64
-text = "Sheep Weaver"
+text = "Sheepweaver"
 horizontal_alignment = 1
 
 [node name="Working Title Disclaimer" type="Label" parent="."]

@@ -1,0 +1,8 @@
+import "res://Dialogue/TheEnd.dialogue" as Dialogue_TheEnd
+
+~ start
+
+
+
+=> Dialogue_TheEnd/start
+=> END
