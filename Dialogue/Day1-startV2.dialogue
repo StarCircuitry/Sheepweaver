@@ -1,0 +1,11 @@
+~ start
+The door opens with a golden glow pouring inside the empty workshop.
+[color=light-blue]Threads[/color] and [color=green]fabrics[/color] littered across the workshop's countless workbenches.
+The [b]Sheep Weaver[/b] glances over her creations, holding a sigh as she ponders...
+=> work1
+
+~ work1
+The workshop's windows open to reveal the estatic townfolks waiting for new garments.
+As she takes her post on the storfront counter, the [b]Sheep Weaver[/b] begins her work.
+do get_tree().change_scene_to_file("res://scenes/day1-work.tscn")
+=> END
