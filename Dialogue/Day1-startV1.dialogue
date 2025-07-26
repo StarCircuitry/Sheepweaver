@@ -1,0 +1,31 @@
+~ start
+The sun rises over a small town. Its streets slowly become alive with curious customers.
+You open the door to your Grandfather's workshop.
+It smells the same as the first time you visited as a young lamb.
+The workshop looks clean, with bundles of yarn and threads stored across the endless wooden tabletops.
+You take a long, deep breath as you slowly take your first steps inside...
+Your first day as a [b]Sheep Weaver[/b] has begun.
+=> sheep1
+
+~ sheep1
+Sheep Weaver: wow...
+Sheep Weaver: there's a lot I need to get done...
+Sheep Weaver: But where do I even start with all of this...
+=> workshop1
+
+~ workshop1
+You noticed a ruffled piece of paper on a workbench nearby.
+As approached it, you immediately recognised the handwriting..
+=> grandpa1
+
+~ grandpa1
+[i]My dearest grandchild,[/i]
+[i]I know you have been [shake]dreading[/shake] for this role since you've last heard from me,[/i]
+[i]but you are more than ready to take on this magnificant role.[/i]
+[i]More [color=green]threads[/color] and [color=green]fabric[/color] can be found in the store closet near the door you've just entered.[/i]
+[i]Along with the stock lying around the workshop, you should be enough to get started.
+[i]Don't be [shake]afraid[/shake] in asking the local townsfolk [color=yellow]where to find more materials.[/color][/i]
+[i]The town is very friendly, and don't be too hard on yourself in your new role. [/i]
+[i]I know you will do well.[/i]
+[b]Grandpa[/b]
+=> END
