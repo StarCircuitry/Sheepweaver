@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://dek7fr7d7dij5"]
+
+[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://UI-Iterations/buttonFocus-v3.tres" id="1_elawe"]
+[ext_resource type="Script" uid="uid://dllagoi8xs61h" path="res://UI-Iterations/menu_ui_v1.gd" id="1_yjsk1"]
+[ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="2_x31cr"]
+[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://UI-Iterations/buttonPressed-v3.tres" id="2_yjsk1"]
+[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://UI-Iterations/buttonHover-v3.tres" id="3_oh2og"]
+[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://UI-Iterations/buttonNormal-v3.tres" id="4_5aynj"]
+[ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="7_q6uvb"]
+[ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="8_pq4q3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih8et"]
+bg_color = Color(0, 0, 0, 0.498039)
+
+[node name="MenuUi-v1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjsk1")
+
+[node name="Background" type="Panel" parent="."]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ih8et")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -39.5
+offset_right = 111.0
+offset_bottom = 167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x31cr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("1_elawe")
+theme_override_styles/hover_pressed = ExtResource("2_yjsk1")
+theme_override_styles/hover = ExtResource("3_oh2og")
+theme_override_styles/pressed = ExtResource("2_yjsk1")
+theme_override_styles/normal = ExtResource("4_5aynj")
+text = "Start Game"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x31cr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("1_elawe")
+theme_override_styles/hover_pressed = ExtResource("2_yjsk1")
+theme_override_styles/hover = ExtResource("3_oh2og")
+theme_override_styles/pressed = ExtResource("2_yjsk1")
+theme_override_styles/normal = ExtResource("4_5aynj")
+text = "Options"
+
+[node name="Exit Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x31cr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("1_elawe")
+theme_override_styles/hover_pressed = ExtResource("2_yjsk1")
+theme_override_styles/hover = ExtResource("3_oh2og")
+theme_override_styles/pressed = ExtResource("2_yjsk1")
+theme_override_styles/normal = ExtResource("4_5aynj")
+text = "Exit Game"
+
+[node name="Game Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 56.0
+offset_right = 169.0
+offset_bottom = 121.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_q6uvb")
+theme_override_font_sizes/font_size = 64
+text = "Sheep Weaver"
+horizontal_alignment = 1
+
+[node name="Working Title Disclaimer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = 128.0
+offset_right = 92.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_pq4q3")
+theme_override_font_sizes/font_size = 24
+text = "! Working Title !"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_startGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exitGame_pressed"]
