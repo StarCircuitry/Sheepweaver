@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://biggiy8rkorkr"]
+
+[ext_resource type="Script" uid="uid://diyn6el0vao86" path="res://UI-Iterations/options_ui_v_1.gd" id="1_j0cai"]
+[ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="2_uarqr"]
+[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://UI-Iterations/buttonFocus-v3.tres" id="3_36ci6"]
+[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://UI-Iterations/buttonPressed-v3.tres" id="4_8ysn6"]
+[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://UI-Iterations/buttonHover-v3.tres" id="5_rwtyf"]
+[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://UI-Iterations/buttonNormal-v3.tres" id="6_cbre2"]
+[ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="7_boaoi"]
+[ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="8_wnwfb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih8et"]
+bg_color = Color(0, 0, 0, 0.498039)
+
+[node name="OptionsUI v1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0cai")
+
+[node name="Background" type="Panel" parent="."]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ih8et")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -116.0
+offset_right = 143.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Game Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_boaoi")
+theme_override_font_sizes/font_size = 80
+text = "¯\\_(ツ)_/¯"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("8_wnwfb")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave][rainbow]lol there's no options[/rainbow][/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="ReturnBack" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uarqr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_36ci6")
+theme_override_styles/hover_pressed = ExtResource("4_8ysn6")
+theme_override_styles/hover = ExtResource("5_rwtyf")
+theme_override_styles/pressed = ExtResource("4_8ysn6")
+theme_override_styles/normal = ExtResource("6_cbre2")
+text = "Return Back"
+
+[connection signal="pressed" from="VBoxContainer/ReturnBack" to="." method="_on_returnback_pressed"]
