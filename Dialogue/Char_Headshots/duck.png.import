@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8fudnxkd21v"
-path="res://.godot/imported/sheepweavers.png-29317bedd66baf4b30b157149190e24d.ctex"
+uid="uid://hxbrhaf7lr2c"
+path="res://.godot/imported/duck.png-6c88fdadf63fef0c9979553a941a0f7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Char_Headshots/sheepweavers.png"
-dest_files=["res://.godot/imported/sheepweavers.png-29317bedd66baf4b30b157149190e24d.ctex"]
+source_file="res://Dialogue/Char_Headshots/duck.png"
+dest_files=["res://.godot/imported/duck.png-6c88fdadf63fef0c9979553a941a0f7a.ctex"]
 
 [params]
 

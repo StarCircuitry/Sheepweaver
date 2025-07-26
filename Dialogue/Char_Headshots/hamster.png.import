@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgnddxi7u6fnu"
-path="res://.godot/imported/sheep weaver.png-63391b50a3ea86f6a17d96b6d1813572.ctex"
+uid="uid://blhf7ykktuqp"
+path="res://.godot/imported/hamster.png-a13e0fa02ad90cfd74b582fbc4884f91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Char_Headshots/sheep weaver.png"
-dest_files=["res://.godot/imported/sheep weaver.png-63391b50a3ea86f6a17d96b6d1813572.ctex"]
+source_file="res://Dialogue/Char_Headshots/hamster.png"
+dest_files=["res://.godot/imported/hamster.png-a13e0fa02ad90cfd74b582fbc4884f91.ctex"]
 
 [params]
 
