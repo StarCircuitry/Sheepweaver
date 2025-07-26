@@ -9,6 +9,12 @@ var mouseTile = Vector2i()
 var layerCount = -1
 var threads = []
 const DEFAULT_LAYER = preload("res://thread_layer.tscn")
+const COTTON_MATERIAL = preload("res://cotton_color.gdshader")
+const LINEN_MATERIAL = preload("res://thread_layer.tscn::ShaderMaterial_4kbh8")
+const WOOL_MATERIAL = preload("res://wool_color.gdshader")
+
+
+const SHADERS = [COTTON_MATERIAL, LINEN_MATERIAL, WOOL_MATERIAL]
 
 var goalPattern = []
 var GridStates = []
@@ -96,7 +102,7 @@ func _input(event):
 		elif ((mouseTile.y == 0 && mouseTile.x == 0) ||
 		(mouseTile.x > GridWidth || mouseTile.y > GridHeight)):
 			pass
-		elif (mouseTile.y == 0 && (mouseValue in range(3, 5))):	
+		elif (mouseTile.y == 0 && (mouseValue == WOOL)):	
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -107,7 +113,7 @@ func _input(event):
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
 				Vector2(0, 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
-		elif (mouseTile.y == 0 && (mouseValue == COTTON)):
+		elif (mouseTile.y == 0 && (mouseValue in range(COTTON, LINEN+1))):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -119,7 +125,7 @@ func _input(event):
 				Vector2(VERTICAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
 				
-		elif (mouseTile.x == 0 && mouseValue in range(3, 5)):
+		elif (mouseTile.x == 0 && mouseValue == WOOL):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -130,7 +136,7 @@ func _input(event):
 				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
 				Vector2(0, 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
-		elif (mouseTile.x == 0 && mouseValue == COTTON):
+		elif (mouseTile.x == 0 && mouseValue in range(COTTON, LINEN+1)):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -157,6 +163,8 @@ func GrabResource() -> void:
 	mouseValue = get_cell_source_id(mouseTile)
 
 func ApplyColor() -> void:
+	if (mouseValue == LINEN):
+		SHADERS[1].set_shader_parameter("fabricColor1", Vector3(0.5, 0., 0.))
 	pass
 #	var cellID = 
 	
