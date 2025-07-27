@@ -263,8 +263,8 @@ func ApplyFrameMaterial() -> void:
 		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
 		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
 		Vector2(0, 0), 0)
-		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
-		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
+		LoomGrid[mouseTile.x][GridHeight-1] = LOOM_FRAME_BOTTOM_USED
+		set_cell(Vector2(mouseTile.x, GridHeight-1), LOOM_FRAME_BOTTOM_USED,
 		Vector2(0, 0), 0)
 	
 
