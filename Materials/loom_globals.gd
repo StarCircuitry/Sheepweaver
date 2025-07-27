@@ -31,7 +31,7 @@ const pink3 = Vector3(0.937, 0.529, 0.612)
 
 const black1 = Vector3(0.188, 0.165, 0.157)
 const black2 = Vector3(0.165, 0.129, 0.129)
-const black3 = Vector3(0.165, 0.129, 0.129)
+const black3 = Vector3(0.118, 0.098, 0.094)
 
 const PLAIN = [plain1, plain2, plain3]
 const CLAY = [clay1, clay2, clay3]
