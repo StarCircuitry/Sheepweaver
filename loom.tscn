@@ -1,0 +1,141 @@
+[gd_scene load_steps=24 format=3 uid="uid://ycpuexrfjelg"]
+
+[ext_resource type="Texture2D" uid="uid://ca3k8h2q7hil8" path="res://BlankTileSmall.png" id="1_3ptti"]
+[ext_resource type="Script" uid="uid://dkj7vcx1nd1m6" path="res://loom.gd" id="1_l5ywt"]
+[ext_resource type="Texture2D" uid="uid://buf528s21kvxi" path="res://LoomTileSmall.png" id="2_qm2fq"]
+[ext_resource type="Texture2D" uid="uid://c2cwyl3jyd3cm" path="res://BlueTileSmall.png" id="3_7j0wo"]
+[ext_resource type="Texture2D" uid="uid://bkx4x1eja80ek" path="res://Game Sprites/CottonTiles.png" id="3_jdf5i"]
+[ext_resource type="Texture2D" uid="uid://baocxfo20aieo" path="res://RedTileSmall.png" id="4_b8ej6"]
+[ext_resource type="Texture2D" uid="uid://ck1p0jyyc0erm" path="res://Game Sprites/WoolBase.png" id="5_6eiy4"]
+[ext_resource type="Texture2D" uid="uid://cfdmc2yolikcq" path="res://Peg.png" id="5_qm2fq"]
+[ext_resource type="Material" uid="uid://t4w6syhoat3a" path="res://Materials/cotton_color.tres" id="6_4r0su"]
+[ext_resource type="Texture2D" uid="uid://brju5rcpb26vk" path="res://Game Sprites/LinenTiles.png" id="7_jrupu"]
+[ext_resource type="Material" uid="uid://dgw8fscxm5ino" path="res://Materials/linen_color.tres" id="7_lapn4"]
+[ext_resource type="Texture2D" uid="uid://2feb7diu460h" path="res://Game Sprites/WoolTiles.png" id="8_jrupu"]
+[ext_resource type="Material" uid="uid://c517stwve3x8w" path="res://Materials/wool_color.tres" id="8_lapn4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csw54"]
+texture = ExtResource("1_3ptti")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6eiy4"]
+texture = ExtResource("2_qm2fq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r0su"]
+texture = ExtResource("5_6eiy4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3lu3"]
+texture = ExtResource("3_jdf5i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/material = ExtResource("6_4r0su")
+1:0/0 = 0
+1:0/0/material = ExtResource("6_4r0su")
+2:0/0 = 0
+2:0/0/material = ExtResource("6_4r0su")
+3:0/0 = 0
+3:0/0/material = ExtResource("6_4r0su")
+4:0/0 = 0
+4:0/0/material = ExtResource("6_4r0su")
+5:0/0 = 0
+5:0/0/material = ExtResource("6_4r0su")
+6:0/0 = 0
+6:0/0/material = ExtResource("6_4r0su")
+7:0/0 = 0
+7:0/0/material = ExtResource("6_4r0su")
+8:0/0 = 0
+8:0/0/material = ExtResource("6_4r0su")
+9:0/0 = 0
+9:0/0/material = ExtResource("6_4r0su")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5fkp"]
+texture = ExtResource("7_jrupu")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/material = ExtResource("7_lapn4")
+1:0/0 = 0
+1:0/0/material = ExtResource("7_lapn4")
+2:0/0 = 0
+2:0/0/material = ExtResource("7_lapn4")
+3:0/0 = 0
+3:0/0/material = ExtResource("7_lapn4")
+4:0/0 = 0
+4:0/0/material = ExtResource("7_lapn4")
+5:0/0 = 0
+5:0/0/material = ExtResource("7_lapn4")
+6:0/0 = 0
+6:0/0/material = ExtResource("7_lapn4")
+7:0/0 = 0
+7:0/0/material = ExtResource("7_lapn4")
+8:0/0 = 0
+8:0/0/material = ExtResource("7_lapn4")
+9:0/0 = 0
+9:0/0/material = ExtResource("7_lapn4")
+10:0/0 = 0
+10:0/0/material = ExtResource("7_lapn4")
+11:0/0 = 0
+11:0/0/material = ExtResource("7_lapn4")
+12:0/0 = 0
+12:0/0/material = ExtResource("7_lapn4")
+13:0/0 = 0
+13:0/0/material = ExtResource("7_lapn4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lapn4"]
+texture = ExtResource("8_jrupu")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/material = ExtResource("8_lapn4")
+1:0/0 = 0
+1:0/0/material = ExtResource("8_lapn4")
+2:0/0 = 0
+2:0/0/material = ExtResource("8_lapn4")
+3:0/0 = 0
+3:0/0/material = ExtResource("8_lapn4")
+4:0/0 = 0
+4:0/0/material = ExtResource("8_lapn4")
+5:0/0 = 0
+5:0/0/material = ExtResource("8_lapn4")
+6:0/0 = 0
+6:0/0/material = ExtResource("8_lapn4")
+7:0/0 = 0
+7:0/0/material = ExtResource("8_lapn4")
+8:0/0 = 0
+8:0/0/material = ExtResource("8_lapn4")
+9:0/0 = 0
+9:0/0/material = ExtResource("8_lapn4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7j0wo"]
+texture = ExtResource("5_qm2fq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdf5i"]
+texture = ExtResource("3_7j0wo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrupu"]
+texture = ExtResource("4_b8ej6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_l5ywt"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_csw54")
+sources/1 = SubResource("TileSetAtlasSource_6eiy4")
+sources/7 = SubResource("TileSetAtlasSource_jrupu")
+sources/6 = SubResource("TileSetAtlasSource_jdf5i")
+sources/5 = SubResource("TileSetAtlasSource_7j0wo")
+sources/2 = SubResource("TileSetAtlasSource_h3lu3")
+sources/3 = SubResource("TileSetAtlasSource_p5fkp")
+sources/15 = SubResource("TileSetAtlasSource_4r0su")
+sources/4 = SubResource("TileSetAtlasSource_lapn4")
+
+[node name="Loom" type="TileMapLayer"]
+tile_set = SubResource("TileSet_l5ywt")
+script = ExtResource("1_l5ywt")

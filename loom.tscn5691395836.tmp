@@ -1,0 +1,38 @@
+[gd_scene load_steps=11 format=3 uid="uid://ycpuexrfjelg"]
+
+[ext_resource type="Script" uid="uid://dkj7vcx1nd1m6" path="res://loom.gd" id="1_l5ywt"]
+[ext_resource type="Texture2D" uid="uid://bklpd37h5dbvt" path="res://BlankTile.png" id="1_qm2fq"]
+[ext_resource type="Texture2D" uid="uid://x035uksbjlv4" path="res://LoomTile.png" id="2_7j0wo"]
+[ext_resource type="Texture2D" uid="uid://htyd1r466uee" path="res://BlueTile.png" id="3_b8ej6"]
+[ext_resource type="Texture2D" uid="uid://dwvued77ch35d" path="res://RedTile.png" id="4_csw54"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6eiy4"]
+texture = ExtResource("1_qm2fq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdf5i"]
+texture = ExtResource("2_7j0wo")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrupu"]
+texture = ExtResource("3_b8ej6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lapn4"]
+texture = ExtResource("4_csw54")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_l5ywt"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_6eiy4")
+sources/1 = SubResource("TileSetAtlasSource_jdf5i")
+sources/2 = SubResource("TileSetAtlasSource_jrupu")
+sources/3 = SubResource("TileSetAtlasSource_lapn4")
+
+[node name="Loom" type="TileMapLayer"]
+tile_set = SubResource("TileSet_l5ywt")
+script = ExtResource("1_l5ywt")

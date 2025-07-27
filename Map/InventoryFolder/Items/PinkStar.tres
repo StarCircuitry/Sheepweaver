@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dx8bpqcb0johc"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_y78k3"]
+[ext_resource type="Texture2D" uid="uid://c2btaxnwuuss4" path="res://Map/Art/item1.png" id="2_sjwk8"]
+
+[resource]
+script = ExtResource("1_y78k3")
+name = "Pink Star"
+texture = ExtResource("2_sjwk8")
+metadata/_custom_type_script = "uid://n8ohioq7a1bp"

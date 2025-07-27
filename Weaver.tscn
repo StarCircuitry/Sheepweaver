@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlcsghbh7l4u1"]
 
-[ext_resource type="Texture2D" uid="uid://defdwuive00wa" path="res://icon.svg" id="1_mtohx"]
+[ext_resource type="PackedScene" uid="uid://ycpuexrfjelg" path="res://loom.tscn" id="1_mtohx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Weaver" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-texture = ExtResource("1_mtohx")
+[node name="Loom" parent="." instance=ExtResource("1_mtohx")]
