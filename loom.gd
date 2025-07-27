@@ -9,6 +9,14 @@ var mouseTile = Vector2i()
 var layerCount = -1
 var threads = []
 
+## For adjusting the loom frame ##
+var RaisedRow = 5
+var FrameMoveIndices = []
+
+
+const PLAIN = 0
+const CLAY = 1
+
 ## Shader Stuff	##
 const DEFAULT_LAYER = preload("res://thread_layer.tscn")
 
@@ -25,6 +33,7 @@ const BLUE_COLOR = Vector3(0., 0., 1.)
 
 var goalPattern = []
 var GridStates = []
+
 
 ## LOOM FRAME CONSTANTS ##
 const FRAME_ROW = 1
@@ -64,6 +73,7 @@ func initializeGridData() -> void:
 		for row in range(GridHeight):
 			if ((row == FRAME_ROW || row == GridHeight-FRAME_VERT_OFFSET)):
 				LoomGrid[col].append(LOOM_FRAME)
+				FrameMoveIndices.append([-1])
 			elif ((row == PEG_ROW && col > 0) || ((row > 0 && row < GridHeight-1) && col == PEG_COL)):
 				LoomGrid[col].append(LOOM_PEG)
 			else:
@@ -91,6 +101,7 @@ func _ready() -> void:
 	set_cell(undoPos, EMPTY, Vector2(0, 0), 0)
 	set_cell(checkmePos, LOOM_PEG, Vector2(0, 0), 0)
 	set_cell(toMapButton, LOOM_PEG, Vector2(0, 0), 0)
+	
 
 func _process(_delta: float) -> void:
 	mouseTile = local_to_map(get_global_mouse_position())
@@ -104,11 +115,11 @@ func _input(event):
 		elif (mouseTile == undoPos):
 			UndoMove()
 		elif (mouseTile == checkmePos):
-			DisplayGoalPattern()
+			CheckMe()
 		elif (mouseTile == toMapButton):
 			MoveToMap()
 		elif ((mouseTile.y == 0 && mouseTile.x == 0) ||
-		(mouseTile.x > GridWidth || mouseTile.y > GridHeight)):
+		(mouseTile.x > GridWidth-1 || mouseTile.y > GridHeight-1)):
 			pass
 		elif (mouseTile.y == 0 && (mouseValue == WOOL)):	
 			layerCount += 1
@@ -121,7 +132,7 @@ func _input(event):
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
 				Vector2(0, 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
-		elif (mouseTile.y == 0 && (mouseValue in range(COTTON, LINEN+1))):
+		elif (mouseTile.y == 0 && (mouseValue in range(COTTON, WOOL+1))):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -132,19 +143,7 @@ func _input(event):
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
 				Vector2(VERTICAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
-				
-		elif (mouseTile.x == 0 && mouseValue == WOOL):
-			layerCount += 1
-			var new_layer = DEFAULT_LAYER.instantiate()
-			add_child(new_layer)
-			threads.append(new_layer)
-			
-			for col in range(1, GridWidth):
-				LoomGrid[col][mouseTile.y] = mouseValue
-				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
-				Vector2(0, 0), 0)
-			GridStates.append(LoomGrid.duplicate(true))
-		elif (mouseTile.x == 0 && mouseValue in range(COTTON, LINEN+1)):
+		elif (mouseTile.x == 0 && mouseValue in range(COTTON, WOOL+1)):
 			layerCount += 1
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
@@ -155,15 +154,17 @@ func _input(event):
 				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
 				Vector2(HORIZONTAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
+		elif (LoomGrid[mouseTile.x][mouseTile.y] == LOOM_FRAME):
+			AdjustFrame()
 
-func UndoMove() -> void:
+func UndoMove(frameMove: bool=false) -> void:
+	print(GridStates)
 	if (layerCount >= 0):
-		print(GridStates)
 		var lastMove = threads.get(layerCount) as TileMapLayer
 		threads.remove_at(layerCount)
 		lastMove.queue_free()
 		GridStates.remove_at(layerCount+1)
-		LoomGrid = GridStates[layerCount]
+		LoomGrid = GridStates[layerCount].duplicate(true)
 		layerCount -= 1
 		print(GridStates)
 
@@ -173,16 +174,21 @@ func GrabResource() -> void:
 
 func ApplyColor() -> void:
 	if (mouseTile == color1Pos):
-		mouseColor = BLUE_COLOR
+		mouseColor = PLAIN
 	elif (mouseTile == color2Pos):
-		mouseColor = RED_COLOR
+		mouseColor = CLAY
 	if (mouseValue == COTTON):
-		COTTON_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
+		COTTON_MATERIAL.set_shader_parameter("fabricColor1", LoomGlobals.colors[mouseColor][0])
+		COTTON_MATERIAL.set_shader_parameter("fabricColor2", LoomGlobals.colors[mouseColor][1])
+		COTTON_MATERIAL.set_shader_parameter("fabricColor3", LoomGlobals.colors[mouseColor][2])
 	elif (mouseValue == LINEN):
-		LINEN_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
+		LINEN_MATERIAL.set_shader_parameter("fabricColor1", LoomGlobals.colors[mouseColor][0])
+		LINEN_MATERIAL.set_shader_parameter("fabricColor2", LoomGlobals.colors[mouseColor][1])
+		LINEN_MATERIAL.set_shader_parameter("fabricColor3", LoomGlobals.colors[mouseColor][2])
 	elif (mouseValue == WOOL):
-		WOOL_MATERIAL.set_shader_parameter("fabricColor1", mouseColor)
-		
+		WOOL_MATERIAL.set_shader_parameter("fabricColor1", LoomGlobals.colors[mouseColor][0])
+		WOOL_MATERIAL.set_shader_parameter("fabricColor2", LoomGlobals.colors[mouseColor][1])
+		WOOL_MATERIAL.set_shader_parameter("fabricColor3", LoomGlobals.colors[mouseColor][2])		
 
 func CheckMe() -> void:
 	if (LoomGrid == goalPattern):
@@ -193,9 +199,53 @@ func MoveToMap() -> void:
 	
 
 func AdjustFrame() -> void:
-	pass
+	
+	var col = mouseTile.x
+	var frameRow = mouseTile.y
+	
+	print(frameRow)
+	print(RaisedRow)
+	
+	if frameRow != RaisedRow:
+		FrameMoveIndices[col].append(layerCount)
+		layerCount += 1
+		
+		var mask_layer = DEFAULT_LAYER.instantiate()
+		add_child(mask_layer)
+		threads.append(mask_layer)
+		mask_layer.top_level = true
+		LoomGrid[col][RaisedRow] = LOOM_FRAME
+		mask_layer.set_cell(Vector2(col, RaisedRow), LOOM_FRAME, Vector2(0, 0), 0)
+		for row in range(RaisedRow+1, GridHeight):
+			LoomGrid[col][row] = EMPTY
+			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
+	else:
+		LoomGrid[col][GridHeight-1] = LOOM_FRAME
+		
 
-func DisplayGoalPattern() -> void:
+		
+		if (layerCount >= 0):
+			var lastMove = threads.get(layerCount) as TileMapLayer
+			threads.remove_at(layerCount)
+			lastMove.queue_free()
+			GridStates.remove_at(layerCount+1)
+			LoomGrid = GridStates[layerCount].duplicate(true)
+			layerCount -= 1
+			print(GridStates)
+
+	GridStates.append(LoomGrid.duplicate(true))
+		
+
+	const col_thresholds = [3, 6, 9]
+	if (col <= 3):
+		pass
+	elif (col <= 6):
+		pass
+	elif (col <= 9):
+		pass
+	
+
+func DisplayGoalPattern(goalNum: int) -> void:
 	goalPattern = LoomGrid.duplicate(true)
 	var goal_layer = DEFAULT_LAYER.instantiate()
 	add_child(goal_layer)
@@ -205,8 +255,18 @@ func DisplayGoalPattern() -> void:
 	for col in range(GridWidth):
 		for row in range(GridHeight):
 			goal_layer.erase_cell(Vector2i(col, row))
-			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)
-
-	
-	
+			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
 	pass
+
+#const level0 = [
+#	[[(0, 0), (1, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+# 	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)],
+#	[(5, 0), (1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (1, 0)]]
+#]
