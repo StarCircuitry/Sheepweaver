@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlkrrbgbclyig"]
+
+[ext_resource type="Script" uid="uid://vt8xux1rlp1o" path="res://main_test.gd" id="1_83wws"]
+[ext_resource type="PackedScene" uid="uid://dek7fr7d7dij5" path="res://ui-iterations/menuUI-v1.tscn" id="2_l805c"]
+[ext_resource type="PackedScene" uid="uid://biggiy8rkorkr" path="res://ui-iterations/optionsUI-v1.tscn" id="3_p0f5p"]
+
+[node name="MainTest" type="Node2D"]
+script = ExtResource("1_83wws")
+
+[node name="MenuUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MenuUi-v1" parent="MenuUI" instance=ExtResource("2_l805c")]
+
+[node name="OptionUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="OptionsUI v1" parent="OptionUI" instance=ExtResource("3_p0f5p")]

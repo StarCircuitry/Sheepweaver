@@ -1,0 +1,34 @@
+import "res://dialogue/TheEnd.dialogue" as Dialogue_TheEnd
+~ start
+[speed=0.8]The chimes of the town clock tower echo through the streets.
+[speed=0.8]You sigh with relief, knowing that the day has come to an end.
+[speed=0.8]You placed the leftover threads and fabrics, littered across the workbenches, back into their drawers.
+[speed=0.8]One by one, you unlooped the cotton yarns off of the loom, 
+[speed=0.8]And placed the leftover fluffy balls inside a small glass jar.
+[speed=0.4]You close your eyes for a moment...
+[speed=0.8]You think of the customers you have met today.
+[speed=0.8]The eager Duck now with their new shirt.
+[speed=0.8]The nervous Frog, hopefully, getting their new job.
+[speed=0.8]The energetic Hamster who will have pairs of socks for all of their eight pups.
+[speed=0.8]And all the other customers who have a fabulous new garment to wear as the sun comes back up tomorrow.
+You open your eyes.
+[speed=0.8]And the streets seem...
+[speed=0.2]Weirdly silent.
+[speed=0.5]The day has ended... But does the day end this quickly?
+[speed=0.5]You get to closing the storefront... but notice a note left on the counter.
+[speed=0.25]The counter was empty before your eyes were closed...
+[speed=0.5]You looked closer at the note.
+[speed=0.5]You can only recognise a few scribbled words...
+[speed=0.25][i]Meet at Mountain Hut[/i]
+[speed=0.5]Underneath the words was a taped [color=cyan]blue flower[/color].
+[speed=0.25][color=cyan]It emanated a soft glow...[/color]
+Suddenly the streets began to howl.
+[speed=0.8]You look up to see...
+[speed=0.8]Nothing...?
+[speed=0.5]But the howling continued.
+[speed=0.5]You took a deep breath.
+[speed=0.4]You closed your eyes...
+[speed=0.4]You wished... for the howling to stop.
+[wait=2][speed=0.5]And it did.
+=> Dialogue_TheEnd/start
+=> END
