@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3r6h0qt74wy6"]
 
-[ext_resource type="Script" uid="uid://ch6hxrj8wiw7n" path="res://UI-Iterations/pause_ui_v_1.gd" id="1_10pds"]
+[ext_resource type="Script" uid="uid://ch6hxrj8wiw7n" path="res://ui-iterations/pause_ui_v_1.gd" id="1_10pds"]
 [ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_km6pb"]
 [ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="3_fobgn"]
 [ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="4_aioca"]

@@ -95,7 +95,7 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-	var portrait_path: String = "res://Dialogue/Char_Headshots/%s.png" % dialogue_line.character.to_lower()
+	var portrait_path: String = "res://dialogue/character_sprites/%s.png" % dialogue_line.character.to_lower()
 	if FileAccess.file_exists(portrait_path):
 		portrait.texture = load(portrait_path)
 		portrait.set_visible(true)

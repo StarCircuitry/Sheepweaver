@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csa3lcitwuxy7"
-path="res://.godot/imported/frog.png-4dfb53a0f521d2204e6429eef11b525a.ctex"
+uid="uid://blxyo0xh3iyjl"
+path="res://.godot/imported/sheepweaver.png-3d80246d7239027deac5d3b529998fc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Char_Headshots/frog.png"
-dest_files=["res://.godot/imported/frog.png-4dfb53a0f521d2204e6429eef11b525a.ctex"]
+source_file="res://dialogue/character_sprites/sheepweaver.png"
+dest_files=["res://.godot/imported/sheepweaver.png-3d80246d7239027deac5d3b529998fc7.ctex"]
 
 [params]
 
