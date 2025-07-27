@@ -127,6 +127,8 @@ func _input(event):
 			add_child(new_layer)
 			threads.append(new_layer)
 			
+			ApplyFrameMaterial()
+			
 			for row in range(2, GridHeight-1):
 				LoomGrid[mouseTile.x][row] = mouseValue
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
@@ -138,6 +140,9 @@ func _input(event):
 			add_child(new_layer)
 			threads.append(new_layer)
 			
+			ApplyFrameMaterial()
+
+			
 			for row in range(2, GridHeight-1):
 				LoomGrid[mouseTile.x][row] = mouseValue
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
@@ -148,6 +153,8 @@ func _input(event):
 			var new_layer = DEFAULT_LAYER.instantiate()
 			add_child(new_layer)
 			threads.append(new_layer)
+			
+			ApplyFrameMaterial()
 			
 			for col in range(1, GridWidth):
 				LoomGrid[col][mouseTile.y] = mouseValue
@@ -207,9 +214,8 @@ func AdjustFrame() -> void:
 	print(RaisedRow)
 	
 	if frameRow != RaisedRow:
-		FrameMoveIndices[col].append(layerCount)
+		#FrameMoveIndices[col].append(layerCount)
 		layerCount += 1
-		
 		var mask_layer = DEFAULT_LAYER.instantiate()
 		add_child(mask_layer)
 		threads.append(mask_layer)
@@ -220,18 +226,8 @@ func AdjustFrame() -> void:
 			LoomGrid[col][row] = EMPTY
 			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
 	else:
-		LoomGrid[col][GridHeight-1] = LOOM_FRAME
-		
-
-		
-		if (layerCount >= 0):
-			var lastMove = threads.get(layerCount) as TileMapLayer
-			threads.remove_at(layerCount)
-			lastMove.queue_free()
-			GridStates.remove_at(layerCount+1)
-			LoomGrid = GridStates[layerCount].duplicate(true)
-			layerCount -= 1
-			print(GridStates)
+		#LoomGrid[col][GridHeight-1] = LOOM_FRAME
+		pass
 
 	GridStates.append(LoomGrid.duplicate(true))
 		
@@ -257,6 +253,10 @@ func DisplayGoalPattern(goalNum: int) -> void:
 			goal_layer.erase_cell(Vector2i(col, row))
 			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
 	pass
+
+func ApplyFrameMaterial() -> void:
+	pass
+	
 
 #const level0 = [
 #	[[(0, 0), (1, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (5, 0), (1, 0)],
