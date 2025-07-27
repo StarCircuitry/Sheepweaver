@@ -219,20 +219,8 @@ func AdjustFrame() -> void:
 		for row in range(RaisedRow+1, GridHeight):
 			LoomGrid[col][row] = EMPTY
 			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
-	else:
-		#LoomGrid[col][GridHeight-1] = LOOM_FRAME
-		pass
 
 	GridStates.append(LoomGrid.duplicate(true))
-		
-
-	const col_thresholds = [3, 6, 9]
-	if (col <= 3):
-		pass
-	elif (col <= 6):
-		pass
-	elif (col <= 9):
-		pass
 	
 
 func DisplayGoalPattern(goalNum: int=0) -> void:
@@ -248,14 +236,7 @@ func DisplayGoalPattern(goalNum: int=0) -> void:
 			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
 	pass
 
-#func ApplyFrameMaterial() -> void:
-#	if (mouseTile.y == 0):
-#		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
-#		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
-#		Vector2(0, 0), 0)
-#		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
-#		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
-#		Vector2(0, 0), 0)
+
 	
 
 #const level0 = [
