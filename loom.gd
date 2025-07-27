@@ -11,9 +11,8 @@ var threads = []
 
 ## For adjusting the loom frame ##
 var RaisedRow = 5
-var FrameMoveIndices = []
 
-
+## Color IDs ##
 const PLAIN = 0
 const CLAY = 1
 
@@ -23,10 +22,6 @@ const DEFAULT_LAYER = preload("res://thread_layer.tscn")
 const COTTON_MATERIAL = preload("res://Materials/cotton_color.tres")
 const LINEN_MATERIAL = preload("res://Materials/linen_color.tres")
 const WOOL_MATERIAL = preload("res://Materials/wool_color.tres")
-
-const RED_COLOR = Vector3(1., 0., 0.)
-const GREEN_COLOR = Vector3(0., 1., 0.)
-const BLUE_COLOR = Vector3(0., 0., 1.)
 
 # Also read in the inventory file
 
@@ -54,13 +49,17 @@ const toMapButton = Vector2i(17, 6)
 
 ## TILESET INDICES ##
 const EMPTY = 0
-const LOOM_FRAME = 1
+
 const COTTON = 2
 const LINEN = 3
 const WOOL = 4
 const LOOM_PEG = 5
 const BLUE = 6
 const RED = 7
+const LOOM_FRAME_TOP_EMPTY = 13
+const LOOM_FRAME_TOP_USED = 14
+const LOOM_FRAME_BOTTOM_EMPTY = 15
+const LOOM_FRAME_BOTTOM_USED = 16
 
 ## TILESET VARIANT INDICES	##
 const VERTICAL_VARIANTS = [0, 2, 4, 6, 8]		# x index
@@ -71,15 +70,17 @@ func initializeGridData() -> void:
 	for col in range(GridWidth):
 		LoomGrid.append([])
 		for row in range(GridHeight):
-			if ((row == FRAME_ROW || row == GridHeight-FRAME_VERT_OFFSET)):
-				LoomGrid[col].append(LOOM_FRAME)
-				FrameMoveIndices.append([-1])
+			if (row == FRAME_ROW):
+				LoomGrid[col].append(LOOM_FRAME_TOP_EMPTY)
+#				FrameMoveIndices.append([-1])
+			elif (row == GridHeight-FRAME_VERT_OFFSET):
+				LoomGrid[col].append(LOOM_FRAME_BOTTOM_EMPTY)
 			elif ((row == PEG_ROW && col > 0) || ((row > 0 && row < GridHeight-1) && col == PEG_COL)):
 				LoomGrid[col].append(LOOM_PEG)
 			else:
 				LoomGrid[col].append(EMPTY)
 	GridStates.append(LoomGrid.duplicate(true))
-	
+
 
 func displayGridData() -> void:
 	for col in range(GridWidth):
@@ -115,7 +116,7 @@ func _input(event):
 		elif (mouseTile == undoPos):
 			UndoMove()
 		elif (mouseTile == checkmePos):
-			CheckMe()
+			DisplayGoalPattern()
 		elif (mouseTile == toMapButton):
 			MoveToMap()
 		elif ((mouseTile.y == 0 && mouseTile.x == 0) ||
@@ -161,7 +162,8 @@ func _input(event):
 				new_layer.set_cell(Vector2(col, mouseTile.y), mouseValue,
 				Vector2(HORIZONTAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 			GridStates.append(LoomGrid.duplicate(true))
-		elif (LoomGrid[mouseTile.x][mouseTile.y] == LOOM_FRAME):
+		elif (LoomGrid[mouseTile.x][mouseTile.y] == LOOM_FRAME_BOTTOM_EMPTY ||
+				LoomGrid[mouseTile.x][mouseTile.y] == LOOM_FRAME_BOTTOM_USED):
 			AdjustFrame()
 
 func UndoMove(frameMove: bool=false) -> void:
@@ -199,7 +201,7 @@ func ApplyColor() -> void:
 
 func CheckMe() -> void:
 	if (LoomGrid == goalPattern):
-		set_cell(checkmePos, LOOM_FRAME, Vector2i(0, 0), 0)
+		set_cell(checkmePos, LOOM_FRAME_TOP_EMPTY, Vector2i(0, 0), 0)
 
 func MoveToMap() -> void:
 	print("Going exploring...")
@@ -220,8 +222,9 @@ func AdjustFrame() -> void:
 		add_child(mask_layer)
 		threads.append(mask_layer)
 		mask_layer.top_level = true
-		LoomGrid[col][RaisedRow] = LOOM_FRAME
-		mask_layer.set_cell(Vector2(col, RaisedRow), LOOM_FRAME, Vector2(0, 0), 0)
+		LoomGrid[col][RaisedRow] = LoomGrid[col][GridHeight-FRAME_VERT_OFFSET]
+		mask_layer.set_cell(Vector2(col, RaisedRow),
+			LoomGrid[col][GridHeight-FRAME_VERT_OFFSET], Vector2(0, 0), 0)
 		for row in range(RaisedRow+1, GridHeight):
 			LoomGrid[col][row] = EMPTY
 			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
@@ -241,7 +244,7 @@ func AdjustFrame() -> void:
 		pass
 	
 
-func DisplayGoalPattern(goalNum: int) -> void:
+func DisplayGoalPattern(goalNum: int = 0) -> void:
 	goalPattern = LoomGrid.duplicate(true)
 	var goal_layer = DEFAULT_LAYER.instantiate()
 	add_child(goal_layer)
@@ -251,11 +254,18 @@ func DisplayGoalPattern(goalNum: int) -> void:
 	for col in range(GridWidth):
 		for row in range(GridHeight):
 			goal_layer.erase_cell(Vector2i(col, row))
-			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
-	pass
+			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)
+	print(LoomGrid)
+	
 
 func ApplyFrameMaterial() -> void:
-	pass
+	if (mouseTile.y == 0):
+		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
+		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
+		Vector2(0, 0), 0)
+		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
+		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
+		Vector2(0, 0), 0)
 	
 
 #const level0 = [
