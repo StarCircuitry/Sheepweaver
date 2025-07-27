@@ -1,4 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://yk63eaqej7e3"]
+
+[gd_scene load_steps=11 format=3 uid="uid://yk63eaqej7e3"]
 
 [ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
 [ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="3_ibqig"]
@@ -6,62 +7,93 @@
 [ext_resource type="Texture2D" uid="uid://cujjtonc1c6sd" path="res://Map/Art/map.png" id="4_0b83e"]
 [ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="4_5b7x6"]
 [ext_resource type="Resource" uid="uid://ctwueokd0m8ou" path="res://Map/InventoryFolder/Items/Blue.tres" id="6_3i3r8"]
+[ext_resource type="Resource" uid="uid://kcfyg8ohvxk0" path="res://Map/InventoryFolder/Items/Green.tres" id="6_va60l"]
 [ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
+[ext_resource type="Resource" uid="uid://b1rmj05ix3h0h" path="res://Map/InventoryFolder/Items/Purple.tres" id="7_pnuv4"]
 [ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
-[ext_resource type="Resource" uid="uid://1j0fchv0arm0" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
+[ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
+[ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="10_o7day"]
 
 [node name="Map" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("2_bkb0i")]
 
-[node name="ReturnHome" parent="." instance=ExtResource("4_5b7x6")]
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(222, 10)
+texture = ExtResource("4_0b83e")
+
+[node name="Indicators" type="Node2D" parent="."]
+position = Vector2(222, 10)
+
+[node name="ReturnHome" parent="Indicators" instance=ExtResource("4_5b7x6")]
 position = Vector2(-222, -23)
 scale = Vector2(2.8, 2.8)
 
-[node name="Map" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("4_0b83e")
-
-[node name="Collectibles" type="Node2D" parent="."]
-
-[node name="YellowCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="YellowCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-184, 77)
 item = ExtResource("3_kgwcq")
 
-[node name="LimeCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="LimeCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-95, 105)
+item = ExtResource("6_va60l")
 
-[node name="PurpleCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-448, 172)
+item = ExtResource("7_pnuv4")
 
-[node name="PurpleCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-446, 331)
+item = ExtResource("7_pnuv4")
 
-[node name="BlueCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlueCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-229, -237)
 item = ExtResource("6_3i3r8")
 
-[node name="BlueCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlueCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-12, -230)
 item = ExtResource("6_3i3r8")
 
-[node name="ClayCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="ClayCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-34, -141)
 item = ExtResource("7_p7f03")
 
-[node name="PinkCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PinkCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(228, -128)
 item = ExtResource("8_tdxq0")
 collectibleRadius = 40.0
 
-[node name="PurpleCollectible3" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible3" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(192, 20)
+item = ExtResource("7_pnuv4")
 
-[node name="BlackCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlackCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(131, 14)
 item = ExtResource("8_p7f03")
 
-[node name="BlackCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlackCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(90, 122)
 item = ExtResource("8_p7f03")
 collectibleRadius = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Easter Egg" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 65.0
+offset_right = 176.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/bold_font = ExtResource("10_o7day")
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b][wave]STOP YOU'RE VIOLATING THE MAP LAW[/wave][/b]"
+fit_content = true
+horizontal_alignment = 1
