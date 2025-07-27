@@ -47,15 +47,15 @@ const colors = [PLAIN, CLAY, TURMERIC, LIME, BLUE, PURPLE, PINK, BLACK]
 
 const PATTERN_1  = [
 			[Vector2i(0, 0), Vector2i(13, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(5, 0), Vector2i(15, 0)], 
-			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(16, 1)], 
+			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(16, 1)], 
 			[Vector2i(5, 0), Vector2i(13, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(15, 1)],
-			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(16, 1)], 
+			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(16, 1)], 
 			[Vector2i(5, 0), Vector2i(13, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(0, 1)],
-			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(16, 1)], 
+			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(16, 1)], 
 			[Vector2i(5, 0), Vector2i(13, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(0, 1)],
-			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(16, 1)],  
+			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(16, 1)],  
 			[Vector2i(5, 0), Vector2i(13, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(3, 1), Vector2i(2, 0), Vector2i(0, 1)],
-			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 0), Vector2i(16, 1)]]
+			[Vector2i(5, 0), Vector2i(14, 1), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(2, 0), Vector2i(16, 1)]]
 
 
 

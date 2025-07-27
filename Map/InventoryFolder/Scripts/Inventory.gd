@@ -50,11 +50,11 @@ func remove_item(slotName: String):
 		emit_signal("inventory_changed")  # Signal instead of direct call
 		
 func getColors() -> Array[int]:
-	var colors = []
+	var colors: Array[int] = []
 	for item in items:
-		if item.name in itemToColorIndex.keys():
+		if (item && (item.name in itemToColorIndex.keys())):
 			if itemToColorIndex[item.name] not in colors:
 				colors.append(itemToColorIndex[item.name])
 		else:
-			print_debug("warning, item.name not found", item.name)
+			print_debug("warning, item.name not found") #item.name)
 	return colors

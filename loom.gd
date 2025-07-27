@@ -24,9 +24,12 @@ const LINEN_MATERIAL = preload("res://Materials/linen_color.tres")
 const WOOL_MATERIAL = preload("res://Materials/wool_color.tres")
 
 # Also read in the inventory file
-var col1 = 1
-var col2 = 2
-var col3 = 3
+var col1 = 0
+var col2 = 0
+var col3 = 0
+
+var INVCOLORS = [col1, col2, col3]
+
 
 var goalPattern = []
 var GridStates = []
@@ -45,6 +48,7 @@ const mat2Pos = Vector2i(11, 6)
 const mat3Pos = Vector2i(11, 8)
 
 # TODO: set good positions and initialize to right color
+@onready var inventory : Inventory = preload("res://Map/InventoryFolder/PlayerInventory.tres")
 const color1Pos = Vector2i(12, 4)
 const color2Pos = Vector2i(12, 6)
 const color3Pos = Vector2i(12, 8)
@@ -114,9 +118,17 @@ func _ready() -> void:
 	set_cell(mat2Pos, LINEN, Vector2(0, 0), 0)
 	set_cell(mat3Pos, WOOL, Vector2(0, 0), 0)
 	
-	set_cell(color1Pos, col1+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
-	set_cell(color2Pos, col2+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
-	set_cell(color3Pos, col3+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	var inventory : Inventory = preload("res://Map/InventoryFolder/PlayerInventory.tres")
+	var colors =  inventory.getColors() #gives you Array[int]
+	
+	for c in range(len(colors)):
+		if (c >= 3):
+			break
+		INVCOLORS[c] += colors[c]
+	
+	set_cell(color1Pos, INVCOLORS[0]+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	set_cell(color2Pos, INVCOLORS[1]+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	set_cell(color3Pos, INVCOLORS[2]+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
 	set_cell(waterPos, COLOR_TILE_OFFSET, Vector2(0, 0), 0)
 	
 	set_cell(undoPos, BUTTON_UNDO, Vector2(0, 0), 0)
@@ -125,7 +137,7 @@ func _ready() -> void:
 	
 	set_cell(Vector2(0, 0), TABLETOP, Vector2(0, 0), 0)
 	
-	#DisplayGoalPattern(0)
+	DisplayGoalPattern(0)
 	
 
 func _process(_delta: float) -> void:
@@ -251,13 +263,15 @@ func DisplayGoalPattern(goalNum: int=0) -> void:
 		goalPattern = LoomGlobals.GOAL_PATTERNS[goalNum]
 		var goal_layer = DEFAULT_LAYER.instantiate()
 		add_child(goal_layer)
-		goal_layer.top_level = true
-		goal_layer.modulate.a = 0.5
+		#goal_layer.top_level = true
+		goal_layer.modulate.a = 0.25
 		
 		for col in range(GridWidth):
 			for row in range(GridHeight):
-				goal_layer.erase_cell(Vector2i(col, row))
-				goal_layer.set_cell(Vector2(col, row), goalPattern[col][row][0], Vector2(0, 0), 0)	
+				if ((goalPattern[col][row][0] in range(COTTON, WOOL+1))
+				|| goalPattern[col][row][0] == LOOM_FRAME):
+					goal_layer.erase_cell(Vector2i(col, row))
+					goal_layer.set_cell(Vector2(col, row), goalPattern[col][row][0], Vector2(goalPattern[col][row][1], 0), 0)	
 		pass
 
 
