@@ -13,7 +13,7 @@ func _on_return_home_area_body_exited(body):
 		$NinePatchRect.hide()
 
 func _on_return_home_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("left_click"):
+	if event.is_action_pressed("left_click") or event.is_action_pressed("interact"):
 #		change scene back to shop HERE
 		print_debug("go home")
 		Global.goto_scene("res://scenes/LoomScene.tscn")
