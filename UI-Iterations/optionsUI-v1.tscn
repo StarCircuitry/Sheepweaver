@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://biggiy8rkorkr"]
 
-[ext_resource type="Script" uid="uid://diyn6el0vao86" path="res://ui-iterations/options_ui_v_1.gd" id="1_j0cai"]
+[ext_resource type="Script" uid="uid://diyn6el0vao86" path="res://UI-Iterations/options_ui_v_1.gd" id="1_j0cai"]
 [ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="2_uarqr"]
-[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://ui-iterations/buttonFocus-v3.tres" id="3_36ci6"]
-[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://ui-iterations/buttonPressed-v3.tres" id="4_8ysn6"]
-[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://ui-iterations/buttonHover-v3.tres" id="5_rwtyf"]
-[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://ui-iterations/buttonNormal-v3.tres" id="6_cbre2"]
+[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://UI-Iterations/buttonFocus-v3.tres" id="3_36ci6"]
+[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://UI-Iterations/buttonPressed-v3.tres" id="4_8ysn6"]
+[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://UI-Iterations/buttonHover-v3.tres" id="5_rwtyf"]
+[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://UI-Iterations/buttonNormal-v3.tres" id="6_cbre2"]
 [ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="7_boaoi"]
 [ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="8_wnwfb"]
 
@@ -29,9 +29,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ih8et")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(522, 830)
+color = Color(1, 0.815686, 0.654902, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
