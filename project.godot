@@ -73,6 +73,11 @@ basket={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":66,"key_label":0,"unicode":98,"location":0,"echo":false,"script":null)
 ]
 }
+collect={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
+]
+}
 left_click={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
@@ -86,7 +91,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Day1-end.dialogue", "res://Dialogue/Day1-intro01.dialogue", "res://Dialogue/Day1-work01.dialogue", "res://Dialogue/Day1-work02.dialogue", "res://Dialogue/Day1-work03.dialogue", "res://Dialogue/Day1-work04-part1.dialogue", "res://Dialogue/Day1-work04-part2.dialogue", "res://Dialogue/Day1-work05-Repeat.dialogue", "res://Dialogue/oldDialogue/Day1-ass01.dialogue", "res://Dialogue/oldDialogue/Day1-merchant01.dialogue", "res://Dialogue/oldDialogue/Day1-startV1.dialogue", "res://Dialogue/oldDialogue/Day1-work04.dialogue", "res://Dialogue/TheEnd.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Day1-end.dialogue", "res://Dialogue/Day1-intro01.dialogue", "res://Dialogue/Day1-work01.dialogue", "res://Dialogue/Day1-work02.dialogue", "res://Dialogue/Day1-work03.dialogue", "res://Dialogue/Day1-work04-part1.dialogue", "res://Dialogue/Day1-work04-part2.dialogue", "res://Dialogue/Day1-work05-Repeat.dialogue", "res://Dialogue/oldDialogue/Day1-ass01.dialogue", "res://Dialogue/oldDialogue/Day1-merchant01.dialogue", "res://Dialogue/oldDialogue/Day1-startV1.dialogue", "res://Dialogue/oldDialogue/Day1-work04.dialogue", "res://Dialogue/TheEnd.dialogue", "res://dialogue/Day1-intro01.dialogue")
 
 [rendering]
 

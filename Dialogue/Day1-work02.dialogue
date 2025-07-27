@@ -1,6 +1,7 @@
 import "res://dialogue/TheEnd.dialogue" as Dialogue_TheEnd
 
 ~ start
+An eager frog comes up to the shopfront
 Frog: Hey there!
 Frog: Would you be able to make me a [color=yellow]Hi-Vis shirt[/color]?
 Frog: I uh... [speed=0.4][shake]have a job interview coming up.[/shake]

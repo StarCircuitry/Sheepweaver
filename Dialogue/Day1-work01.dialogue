@@ -12,10 +12,8 @@ Duck: [speed=0.6]Can you uh... make a new one by any chance?
 	Duck: ...
 	Duck: *sigh*
 	Duck: I understand...
-
-	do Global.goto_scene("res://scenes/day1-work02.tscn")
-
 	The Duck leaves with a sad expression on their face...
+	do Global.goto_scene("res://scenes/day1-work02.tscn")
 	
 - ... Alright.
 	Duck: Oh you are the best!
@@ -35,5 +33,5 @@ Duck: ...
 Duck: I’ll be more careful next time.
 Duck: I can’t thank you enough!
 [speed=0.6]The Duck continues with his day, new shirt on hand.
-do get_tree().change_scene_to_file("res://test-scenes/day1-work02.tscn")
+do Global.goto_scene("res://scenes/day1-work02.tscn")
 => END

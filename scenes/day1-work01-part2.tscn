@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1jvn6nguv684"]
+
+[ext_resource type="Script" uid="uid://b21j0xsxnm47y" path="res://scenes/day_1_work_01.gd" id="1_5iwwr"]
+[ext_resource type="PackedScene" uid="uid://chtjrfsn0nfiy" path="res://Dialogue/balloon.tscn" id="2_hlb4a"]
+[ext_resource type="Texture2D" uid="uid://ccmaseden346e" path="res://Sprites/Counter.png" id="3_kfhwv"]
+
+[node name="Day1-work01-part2" type="Node2D"]
+script = ExtResource("1_5iwwr")
+
+[node name="Dialogue Balloon" parent="." instance=ExtResource("2_hlb4a")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(640, 480)
+offset_right = 640.0
+offset_bottom = 480.0
+pivot_offset = Vector2(522, 830)
+color = Color(1, 0.815686, 0.654902, 1)
+
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("3_kfhwv")
