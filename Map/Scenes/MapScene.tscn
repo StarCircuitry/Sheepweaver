@@ -8,60 +8,62 @@
 [ext_resource type="Resource" uid="uid://ctwueokd0m8ou" path="res://Map/InventoryFolder/Items/Blue.tres" id="6_3i3r8"]
 [ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
 [ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
-[ext_resource type="Resource" uid="uid://1j0fchv0arm0" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
+[ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
 
 [node name="Map" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("2_bkb0i")]
 
-[node name="ReturnHome" parent="." instance=ExtResource("4_5b7x6")]
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(222, 10)
+texture = ExtResource("4_0b83e")
+
+[node name="Indicators" type="Node2D" parent="."]
+position = Vector2(222, 10)
+
+[node name="ReturnHome" parent="Indicators" instance=ExtResource("4_5b7x6")]
 position = Vector2(-222, -23)
 scale = Vector2(2.8, 2.8)
 
-[node name="Map" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("4_0b83e")
-
-[node name="Collectibles" type="Node2D" parent="."]
-
-[node name="YellowCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="YellowCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-184, 77)
 item = ExtResource("3_kgwcq")
 
-[node name="LimeCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="LimeCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-95, 105)
 
-[node name="PurpleCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-448, 172)
 
-[node name="PurpleCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-446, 331)
 
-[node name="BlueCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlueCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-229, -237)
 item = ExtResource("6_3i3r8")
 
-[node name="BlueCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlueCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-12, -230)
 item = ExtResource("6_3i3r8")
 
-[node name="ClayCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="ClayCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-34, -141)
 item = ExtResource("7_p7f03")
 
-[node name="PinkCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PinkCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(228, -128)
 item = ExtResource("8_tdxq0")
 collectibleRadius = 40.0
 
-[node name="PurpleCollectible3" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="PurpleCollectible3" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(192, 20)
 
-[node name="BlackCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlackCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(131, 14)
 item = ExtResource("8_p7f03")
 
-[node name="BlackCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+[node name="BlackCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(90, 122)
 item = ExtResource("8_p7f03")
 collectibleRadius = 30.0
