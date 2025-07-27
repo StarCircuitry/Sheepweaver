@@ -1,18 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://ycpuexrfjelg"]
+[gd_scene load_steps=33 format=3 uid="uid://ycpuexrfjelg"]
 
 [ext_resource type="Texture2D" uid="uid://ca3k8h2q7hil8" path="res://BlankTileSmall.png" id="1_3ptti"]
 [ext_resource type="Script" uid="uid://dkj7vcx1nd1m6" path="res://loom.gd" id="1_l5ywt"]
 [ext_resource type="Texture2D" uid="uid://buf528s21kvxi" path="res://LoomTileSmall.png" id="2_qm2fq"]
 [ext_resource type="Texture2D" uid="uid://c2cwyl3jyd3cm" path="res://BlueTileSmall.png" id="3_7j0wo"]
 [ext_resource type="Texture2D" uid="uid://bkx4x1eja80ek" path="res://Game Sprites/CottonTiles.png" id="3_jdf5i"]
+[ext_resource type="Texture2D" uid="uid://dc8f85j5ep7j1" path="res://Game Sprites/FrameTopEmpty.png" id="3_jpq6x"]
 [ext_resource type="Texture2D" uid="uid://tc4nxlqqkm37" path="res://Game Sprites/FrameTiles.png" id="3_lapn4"]
 [ext_resource type="Texture2D" uid="uid://baocxfo20aieo" path="res://RedTileSmall.png" id="4_b8ej6"]
+[ext_resource type="Texture2D" uid="uid://dc8e8jubj731x" path="res://Game Sprites/FrameTopUsed.png" id="4_t60jt"]
 [ext_resource type="Texture2D" uid="uid://cfdmc2yolikcq" path="res://Peg.png" id="5_qm2fq"]
 [ext_resource type="Material" uid="uid://t4w6syhoat3a" path="res://Materials/cotton_color.tres" id="6_4r0su"]
 [ext_resource type="Texture2D" uid="uid://brju5rcpb26vk" path="res://Game Sprites/LinenTiles.png" id="7_jrupu"]
 [ext_resource type="Material" uid="uid://dgw8fscxm5ino" path="res://Materials/linen_color.tres" id="7_lapn4"]
 [ext_resource type="Texture2D" uid="uid://2feb7diu460h" path="res://Game Sprites/WoolTiles.png" id="8_jrupu"]
 [ext_resource type="Material" uid="uid://c517stwve3x8w" path="res://Materials/wool_color.tres" id="8_lapn4"]
+[ext_resource type="Texture2D" uid="uid://dg5iscn2h2yvu" path="res://Game Sprites/FrameBottomEmpty.png" id="13_h3lu3"]
+[ext_resource type="Texture2D" uid="uid://b4dl62ae6r6c7" path="res://Game Sprites/FrameBottomUsed.png" id="14_p5fkp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csw54"]
 texture = ExtResource("1_3ptti")
@@ -21,6 +25,26 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6eiy4"]
 texture = ExtResource("2_qm2fq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf1yl"]
+texture = ExtResource("3_jpq6x")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y611c"]
+texture = ExtResource("4_t60jt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4giiu"]
+texture = ExtResource("13_h3lu3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1id2"]
+texture = ExtResource("14_p5fkp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -127,6 +151,14 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 0:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpq6x"]
+texture = ExtResource("3_lapn4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_l5ywt"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_csw54")
@@ -138,6 +170,11 @@ sources/2 = SubResource("TileSetAtlasSource_h3lu3")
 sources/3 = SubResource("TileSetAtlasSource_p5fkp")
 sources/4 = SubResource("TileSetAtlasSource_lapn4")
 sources/8 = SubResource("TileSetAtlasSource_4r0su")
+sources/9 = SubResource("TileSetAtlasSource_jpq6x")
+sources/13 = SubResource("TileSetAtlasSource_uf1yl")
+sources/14 = SubResource("TileSetAtlasSource_y611c")
+sources/15 = SubResource("TileSetAtlasSource_4giiu")
+sources/16 = SubResource("TileSetAtlasSource_v1id2")
 
 [node name="Loom" type="TileMapLayer"]
 tile_set = SubResource("TileSet_l5ywt")
