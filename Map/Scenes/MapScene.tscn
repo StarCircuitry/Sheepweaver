@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=11 format=3 uid="uid://yk63eaqej7e3"]
+[gd_scene load_steps=13 format=3 uid="uid://yk63eaqej7e3"]
 
 [ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
 [ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="3_ibqig"]
@@ -11,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
 [ext_resource type="Resource" uid="uid://b1rmj05ix3h0h" path="res://Map/InventoryFolder/Items/Purple.tres" id="7_pnuv4"]
 [ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
-[ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
+[ext_resource type="Resource" uid="uid://1j0fchv0arm0" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
 [ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="10_o7day"]
 
 [node name="Map" type="Node2D"]
