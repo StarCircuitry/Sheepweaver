@@ -1,8 +1,36 @@
 import "res://dialogue/TheEnd.dialogue" as Dialogue_TheEnd
 
 ~ start
+Frog: Hey there!
+Frog: Would you be able to make me a [color=yellow]Hi-Vis shirt[/color]?
+Frog: I uh... [speed=0.4][shake]have a job interview coming up.[/shake]
+Frog: [speed=0.6]I hope you don’t mind that request.
+Sheepweaver: Aw, my dear.
+Sheepweaver: That’s no problem for me.
+Sheepweaver: I’ll give you the best [color=yellow]Hi-Vis shirt[/color] for your interview!
+Frog: [speed=0.6]haha, thanks [b]Sheepweaver[/b]. You really are the best!
+=> END
 
-
-
+~ small_talk01
+Frog: [speed=0.6]So... uh...
+Frog: [speed=0.6]Do you happen to know some...
+Frog: [speed=0.6]tips and tricks?
+Frog: [speed=0.8]You know, to uh...
+Frog: [speed=0.8]Be good at doing a job interview...?
+Sheepweaver: Hmm...
+Sheepweaver: I unfortunately haven’t done those interview things before...
+Sheepweaver: I know some of my friends who have.
+Sheepweaver: It’s not easy, but with practice you can get very good at it!
+Frog: [speed=0.5]Great haha...
+Frog: [speed=0.6]Do you happen to know someone...
+Frog: [speed=0.6]Who was interviewed for a Treehouse construction job?
+Sheepweaver: Hmm...
+Sheepweaver: I’m afraid I haven’t yet.
+Sheepweaver: That’s a very interesting job though!
+Sheepweaver: I’m sure you will do very well!
+Frog: [speed=0.6]Haha...
+Frog: [speed=0.6]Thanks.
+# TO BE REMOVED
 => Dialogue_TheEnd/start
+# TO BE REMOVED
 => END

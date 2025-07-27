@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3yaaxbhhiomf"]
+
+[ext_resource type="Script" uid="uid://b21j0xsxnm47y" path="res://test-scenes/day_1_work_01.gd" id="1_ddkcx"]
+[ext_resource type="PackedScene" uid="uid://chtjrfsn0nfiy" path="res://dialogue/balloon.tscn" id="2_x7wnh"]
+[ext_resource type="Script" uid="uid://do4k6div26vo5" path="res://test-scenes/progression_work_01.gd" id="3_kynr1"]
+[ext_resource type="PackedScene" uid="uid://dqdc5skg1iwlk" path="res://UI-Iterations/dialogueProgressUI-testV1.tscn" id="4_kynr1"]
+
+[node name="Day1-work01" type="Node2D"]
+script = ExtResource("1_ddkcx")
+
+[node name="Dialogue Balloon" parent="." instance=ExtResource("2_x7wnh")]
+
+[node name="Progression_work01" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("3_kynr1")
+
+[node name="DialogueProgressUi-testV1" parent="Progression_work01" instance=ExtResource("4_kynr1")]
