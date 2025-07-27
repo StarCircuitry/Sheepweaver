@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://yk63eaqej7e3"]
+[gd_scene load_steps=11 format=3 uid="uid://yk63eaqej7e3"]
 
 [ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
 [ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="3_ibqig"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
 [ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
 [ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
+[ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="10_o7day"]
 
 [node name="Map" type="Node2D"]
 
@@ -67,3 +68,25 @@ item = ExtResource("8_p7f03")
 position = Vector2(90, 122)
 item = ExtResource("8_p7f03")
 collectibleRadius = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Easter Egg" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 65.0
+offset_right = 176.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/bold_font = ExtResource("10_o7day")
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b][wave]STOP YOU'RE VIOLATING THE MAP LAW[/wave][/b]"
+fit_content = true
+horizontal_alignment = 1
