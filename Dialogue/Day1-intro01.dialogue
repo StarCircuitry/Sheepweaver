@@ -2,12 +2,10 @@
 The door opens with a golden glow pouring inside the empty workshop.
 [color=light-blue]Threads[/color] and [color=green]fabrics[/color] are littered across the workshop's countless workbenches.
 The [b]Sheepweaver[/b] glances over her creations, holding a sigh as she ponders…
-
-Having inherited the shop from her grandmother, the [b] Sheepweaver[/b] is ready to become a new thread in the loom of her family tradition.
 => work1
 
 ~ work1
 The workshop's windows open to reveal the ecstatic townsfolk waiting for new garments.
 As she takes her post on the storefront counter, the [b]Sheepweaver[/b] begins her work.
-do Global.goto_scene("res://scenes/day1-work01.tscn")
+do Global.goto_scene("res://scenes/day1-work01-part1.tscn")
 => END
