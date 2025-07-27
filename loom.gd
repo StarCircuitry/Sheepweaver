@@ -135,7 +135,7 @@ func _ready() -> void:
 	set_cell(checkmePos, BUTTON_CHECK, Vector2(0, 0), 0)
 	set_cell(toMapButton, BUTTON_MAP, Vector2(0, 0), 0)
 	
-	set_cell(Vector2(0, 0), TABLETOP, Vector2(0, 0), 0)
+	set_cell(Vector2(0, 0), TABLETOP, Vector2(3, 3), 0)
 	
 	DisplayGoalPattern(0)
 	
@@ -264,7 +264,7 @@ func DisplayGoalPattern(goalNum: int=0) -> void:
 		var goal_layer = DEFAULT_LAYER.instantiate()
 		add_child(goal_layer)
 		#goal_layer.top_level = true
-		goal_layer.modulate.a = 0.25
+		goal_layer.modulate.a = 0
 		
 		for col in range(GridWidth):
 			for row in range(GridHeight):
