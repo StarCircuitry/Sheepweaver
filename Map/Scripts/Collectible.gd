@@ -7,7 +7,7 @@ var player_in_area = false
 var playerInventory = load("res://Map/InventoryFolder/PlayerInventory.tres")
 
 func _ready():
-	$PressX.hide()
+	$InteractButtons.hide()
 	if state == "picked":
 		$CollectingCooldown.start()
 
@@ -19,7 +19,7 @@ func _process(_delta):
 		if player_in_area:
 		# display picking prompt pop up 
 		# needs to be set in input map
-			if Input.is_action_pressed("collect"):
+			if Input.is_action_pressed("interact"):
 				state = "picked"
 				$CollectingParticles.emitting = true
 				$CollectingCooldown.start()
@@ -28,13 +28,13 @@ func _process(_delta):
 func _on_collectible_area_body_entered(body):
 	if body is CharacterBody2D:
 		player_in_area	= true
-		$PressX.show()
+		$InteractButtons.show()
 
 		
 func _on_collectible_area_body_exited(body):
 	if body is CharacterBody2D:
 		player_in_area	= false
-		$PressX.hide()
+		$InteractButtons.hide()
 		
 func _on_collecting_cooldown_timeout():
 	if state == "picked":

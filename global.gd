@@ -23,6 +23,7 @@ func goto_scene(path):
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.
+	print_debug("removing current scene: ", current_scene)
 	if is_instance_valid(current_scene):
 		current_scene.free()
 

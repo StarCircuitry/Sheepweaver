@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v8ckuaap1x6p"
-path="res://.godot/imported/DyePurple.png-9da69978d11e382fddb78cb414b3aafb.ctex"
+uid="uid://bhqnpcqfgs2nh"
+path="res://.godot/imported/InteractButtons.png-b222954a868adba95ba5d40343e19f08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DyeSprites/DyePurple.png"
-dest_files=["res://.godot/imported/DyePurple.png-9da69978d11e382fddb78cb414b3aafb.ctex"]
+source_file="res://Game Sprites/Buttons/InteractButtons.png"
+dest_files=["res://.godot/imported/InteractButtons.png-b222954a868adba95ba5d40343e19f08.ctex"]
 
 [params]
 
