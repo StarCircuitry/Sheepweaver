@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://kcfyg8ohvxk0"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_r3jp2"]
+[ext_resource type="Texture2D" uid="uid://bykcatj4oivmr" path="res://DyeSprites/DyeGreen.png" id="2_rhr4e"]
+
+[resource]
+script = ExtResource("1_r3jp2")
+name = "Lime Green"
+texture = ExtResource("2_rhr4e")
+metadata/_custom_type_script = "uid://n8ohioq7a1bp"

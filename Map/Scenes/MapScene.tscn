@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=11 format=3 uid="uid://yk63eaqej7e3"]
 
 [ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
@@ -6,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cujjtonc1c6sd" path="res://Map/Art/map.png" id="4_0b83e"]
 [ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="4_5b7x6"]
 [ext_resource type="Resource" uid="uid://ctwueokd0m8ou" path="res://Map/InventoryFolder/Items/Blue.tres" id="6_3i3r8"]
+[ext_resource type="Resource" uid="uid://kcfyg8ohvxk0" path="res://Map/InventoryFolder/Items/Green.tres" id="6_va60l"]
 [ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
+[ext_resource type="Resource" uid="uid://b1rmj05ix3h0h" path="res://Map/InventoryFolder/Items/Purple.tres" id="7_pnuv4"]
 [ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
 [ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="8_tdxq0"]
 [ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="10_o7day"]
@@ -33,12 +36,15 @@ item = ExtResource("3_kgwcq")
 
 [node name="LimeCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-95, 105)
+item = ExtResource("6_va60l")
 
 [node name="PurpleCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-448, 172)
+item = ExtResource("7_pnuv4")
 
 [node name="PurpleCollectible2" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-446, 331)
+item = ExtResource("7_pnuv4")
 
 [node name="BlueCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(-229, -237)
@@ -59,6 +65,7 @@ collectibleRadius = 40.0
 
 [node name="PurpleCollectible3" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(192, 20)
+item = ExtResource("7_pnuv4")
 
 [node name="BlackCollectible" parent="Indicators" instance=ExtResource("3_ibqig")]
 position = Vector2(131, 14)
