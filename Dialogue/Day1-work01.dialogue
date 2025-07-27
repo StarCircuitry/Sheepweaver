@@ -1,12 +1,12 @@
 ~ start
 Duck: Haha, I managed to be first in line!
-Duck: Now tell me, what garments do you think fits me the best.
-Sheepweaver: oh you
-Sheepweaver: You know that best garments that could fit you are my [color=red]threaded hats[/color] for your head!
+Duck: Now tell me, what clothes would you recommend for me?
+Sheepweaver: Oh, it's you.
+Sheepweaver: You know that the best fit for you are my [color=red]threaded hats[/color]!
 Duck: Ah, but I am looking forward to the upcoming townhall ball tomorrow!
 Duck: And I...
 Duck: [shake]Um...[/shake] 
-Duck: may have... [speed=0.3]lost my favourite [color=purple]vest[/color] during a visit to the woods.
+Duck: May have... [speed=0.3]lost my favourite [color=purple]pants[/color] during a visit to the woods.
 Duck: [speed=0.6]Can you uh... make a new one by any chance?
 - No
 	Duck: ...
@@ -18,15 +18,15 @@ Duck: [speed=0.6]Can you uh... make a new one by any chance?
 	The Duck leaves with a sad expression on their face...
 	
 - ... Alright.
-	Duck: Oh you are the best!
-	Duck: Here's some [color=pink]lilac flowers[/color] that would fit very well!
+	Duck: Oh, [b]Sheepweaver[/b], you're the best!
+	Duck: Here are some [color=pink]lilac flowers[/color] for you!
 	Duck: I uh... [shake]got them from the woods where I lost it...[/shake]
 	do Global.goto_scene("res://scenes/LoomScene.tscn")
 => END
 
 ~ order_completed
 Duck: Oh that looks amazing!
-Duck: You are the best [b]Sheepweaver[/b]!
+Duck: You really are the best, our [b]Sheepweaver[/b]!
 Duck: I can’t thank you enough for this!
 Duck: Hopefully... I won’t lose this again.
 Duck: Haha...
@@ -34,6 +34,6 @@ Duck: ha...
 Duck: ...
 Duck: I’ll be more careful next time.
 Duck: I can’t thank you enough!
-[speed=0.6]The Duck continues with his day, new shirt on hand.
+[speed=0.6]The Duck continues with his day, new pants in hand.
 do get_tree().change_scene_to_file("res://test-scenes/day1-work02.tscn")
 => END
