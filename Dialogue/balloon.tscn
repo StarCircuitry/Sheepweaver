@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://chtjrfsn0nfiy"]
+
+[ext_resource type="Script" uid="uid://ddt45sucuubnp" path="res://dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Theme" uid="uid://b6xgtjy3qvpvt" path="res://dialogue/customDialogueTheme-v1.tres" id="2_oyjxg"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="3_ekpaq"]
+[ext_resource type="FontFile" uid="uid://cni8ro151ef7o" path="res://fonts/PixicaFonts-main/PixicaMono-Regular.ttf" id="4_qxthb"]
+[ext_resource type="FontFile" uid="uid://c56xgvj3q84cn" path="res://fonts/PixicaFonts-main/PixicaMono-Wide.ttf" id="5_vini5"]
+[ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="6_ekpaq"]
+[ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="7_g65q1"]
+[ext_resource type="FontFile" uid="uid://bgmhddiklpmo2" path="res://fonts/PixicaFonts-main/Pixica-Regular.ttf" id="9_g65q1"]
+
+[node name="Character Balloon" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_36de5")
+
+[node name="Balloon" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_oyjxg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -50
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/VBoxContainer" node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("3_72ixx")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="Balloon/VBoxContainer/ResponsesMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_g65q1")
+theme_override_font_sizes/font_size = 36
+text = "Response example"
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/VBoxContainer/MarginContainer"]
+clip_children = 2
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Portrait" type="TextureRect" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_ekpaq")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_qxthb")
+theme_override_fonts/mono_font = ExtResource("5_vini5")
+theme_override_fonts/italics_font = ExtResource("7_g65q1")
+theme_override_fonts/bold_font = ExtResource("6_ekpaq")
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 28
+text = "Dialogue..."
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="Balloon/VBoxContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

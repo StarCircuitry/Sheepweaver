@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://cnfhhn5hedvlb" path="res://Map/InventoryFolder/Items/Leaf.tres" id="3_tjtk6"]
 [ext_resource type="Resource" uid="uid://dx8bpqcb0johc" path="res://Map/InventoryFolder/Items/PinkStar.tres" id="4_0nun1"]
 [ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="4_5b7x6"]
-[ext_resource type="Texture2D" uid="uid://crs1gk4vhkegd" path="res://Map/Art/mockmap.png" id="4_lolls"]
 [ext_resource type="Resource" uid="uid://cwlyu8xvphhx" path="res://Map/InventoryFolder/Items/Smiley.tres" id="5_n3t2o"]
+[ext_resource type="Texture2D" uid="uid://cwovhbxsxnpch" path="res://Sprites/finalMap.png" id="7_3i3r8"]
 
 [node name="Map" type="Node2D"]
 
@@ -28,8 +28,6 @@ item = ExtResource("5_n3t2o")
 [node name="ReturnHome" parent="." instance=ExtResource("4_5b7x6")]
 position = Vector2(72, -49)
 
-[node name="Mockmap" type="Sprite2D" parent="."]
-show_behind_parent = true
+[node name="FinalMap" type="Sprite2D" parent="."]
 position = Vector2(-2, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_lolls")
+texture = ExtResource("7_3i3r8")

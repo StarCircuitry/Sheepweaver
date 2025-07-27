@@ -201,6 +201,7 @@ func CheckMe() -> void:
 
 func MoveToMap() -> void:
 	print("Going exploring...")
+	Global.goto_scene("res://Map/Scenes/MapScene.tscn")
 	
 
 func AdjustFrame() -> void:

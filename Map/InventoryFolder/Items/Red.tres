@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://m1i53nsmqy1u"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_okf7n"]
+[ext_resource type="Texture2D" uid="uid://c6ktwwrb4mq4e" path="res://DyeSprites/DyeRed.png" id="2_4je1p"]
+
+[resource]
+script = ExtResource("1_okf7n")
+name = "Clay"
+texture = ExtResource("2_4je1p")
+metadata/_custom_type_script = "uid://n8ohioq7a1bp"

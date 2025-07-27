@@ -142,3 +142,5 @@ sources/14 = SubResource("TileSetAtlasSource_jdf5i")
 [node name="Loom" type="TileMapLayer"]
 tile_set = SubResource("TileSet_l5ywt")
 script = ExtResource("1_l5ywt")
+
+[node name="Node2D" type="Node2D" parent="."]
