@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://gjcbfi3qj4no"]
+
+[ext_resource type="Script" uid="uid://n8ohioq7a1bp" path="res://Map/InventoryFolder/Scripts/InventoryItem.gd" id="1_1pk6q"]
+[ext_resource type="Texture2D" uid="uid://b50264uh8ylon" path="res://DyeSprites/DyeWhite.png" id="2_arb1d"]
+
+[resource]
+script = ExtResource("1_1pk6q")
+name = "White"
+texture = ExtResource("2_arb1d")
+metadata/_custom_type_script = "uid://n8ohioq7a1bp"
