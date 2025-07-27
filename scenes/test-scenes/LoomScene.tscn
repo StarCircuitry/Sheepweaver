@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d08mrdyueu82p"]
+
+[ext_resource type="PackedScene" uid="uid://ycpuexrfjelg" path="res://loom.tscn" id="1_2jssx"]
+[ext_resource type="Texture2D" uid="uid://tplcgp1m4lup" path="res://Sprites/LoomTable.png" id="2_udsnj"]
+
+[node name="LoomScene" type="Node2D"]
+
+[node name="Loom" parent="." instance=ExtResource("1_2jssx")]
+
+[node name="LoomTable" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(269, 139)
+texture = ExtResource("2_udsnj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(269, 139)

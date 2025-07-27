@@ -24,7 +24,9 @@ const LINEN_MATERIAL = preload("res://Materials/linen_color.tres")
 const WOOL_MATERIAL = preload("res://Materials/wool_color.tres")
 
 # Also read in the inventory file
-
+var col1 = 1
+var col2 = 2
+var col3 = 3
 
 var goalPattern = []
 var GridStates = []
@@ -49,6 +51,7 @@ const color3Pos = Vector2i(12, 8)
 const waterPos = Vector2i(12, 10)
 
 
+
 const undoPos = Vector2i(15, 5)
 const checkmePos = Vector2i(15, 7)
 const toMapButton = Vector2i(17, 6)
@@ -59,10 +62,14 @@ const EMPTY = 0
 const COTTON = 2
 const LINEN = 3
 const WOOL = 4
-const LOOM_PEG = 5
-const BLUE = 6
-const RED = 7
+const LOOM_PEG_TOP = 6
+const LOOM_PEG_SIDE = 7
+const TABLETOP = 23
+const TABLETOP_COORDS = Vector2i(4, 3)
 const LOOM_FRAME = 8
+const BUTTON_CHECK = 20
+const BUTTON_MAP = 21
+const BUTTON_UNDO = 22
 
 const COLOR_TILE_OFFSET = 10
 
@@ -80,8 +87,10 @@ func initializeGridData() -> void:
 				FrameXIsUsed.append(0)
 			elif (row == GridHeight-FRAME_VERT_OFFSET):
 				LoomGrid[col].append(LOOM_FRAME)
-			elif ((row == PEG_ROW && col > 0) || ((row > 0 && row < GridHeight-1) && col == PEG_COL)):
-				LoomGrid[col].append(LOOM_PEG)
+			elif (row == PEG_ROW && col > 0):
+				LoomGrid[col].append(LOOM_PEG_TOP)
+			elif ((row > 0 && row < GridHeight-1) && col == PEG_COL):
+				LoomGrid[col].append(LOOM_PEG_SIDE)
 			else:
 				LoomGrid[col].append(EMPTY)
 	GridStates.append(LoomGrid.duplicate(true))
@@ -105,12 +114,16 @@ func _ready() -> void:
 	set_cell(mat2Pos, LINEN, Vector2(0, 0), 0)
 	set_cell(mat3Pos, WOOL, Vector2(0, 0), 0)
 	
-	set_cell(color1Pos, 14, Vector2(0, 0), 0)
-	set_cell(color2Pos, RED, Vector2(0, 0), 0)
+	set_cell(color1Pos, col1+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	set_cell(color2Pos, col2+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	set_cell(color3Pos, col3+COLOR_TILE_OFFSET, Vector2(0, 0), 0)
+	set_cell(waterPos, COLOR_TILE_OFFSET, Vector2(0, 0), 0)
 	
-	set_cell(undoPos, EMPTY, Vector2(0, 0), 0)
-	set_cell(checkmePos, LOOM_PEG, Vector2(0, 0), 0)
-	set_cell(toMapButton, LOOM_PEG, Vector2(0, 0), 0)
+	set_cell(undoPos, BUTTON_UNDO, Vector2(0, 0), 0)
+	set_cell(checkmePos, BUTTON_CHECK, Vector2(0, 0), 0)
+	set_cell(toMapButton, BUTTON_MAP, Vector2(0, 0), 0)
+	
+	set_cell(Vector2(0, 0), TABLETOP, Vector2(0, 0), 0)
 	
 
 func _process(_delta: float) -> void:
@@ -120,7 +133,8 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if (mouseTile == mat1Pos || mouseTile == mat2Pos || mouseTile == mat3Pos):
 			GrabResource()
-		elif (mouseTile == color1Pos|| mouseTile == color2Pos):
+		elif (mouseTile == color1Pos|| mouseTile == color2Pos ||
+			mouseTile == color3Pos || mouseTile == waterPos):
 			ApplyColor()
 		elif (mouseTile == undoPos):
 			UndoMove()
@@ -180,7 +194,8 @@ func GrabResource() -> void:
 	
 
 func ApplyColor() -> void:
-	if (mouseTile == color1Pos || mouseTile == color2Pos || mouseTile == color3Pos):
+	if (mouseTile == color1Pos || mouseTile == color2Pos || mouseTile == color3Pos ||
+		mouseTile == waterPos):
 		mouseColor = get_cell_source_id(mouseTile)-COLOR_TILE_OFFSET	
 	if (mouseValue == COTTON):
 		COTTON_MATERIAL.set_shader_parameter("fabricColor1", LoomGlobals.colors[mouseColor][0])
@@ -224,7 +239,7 @@ func AdjustFrame() -> void:
 			LoomGrid[col][GridHeight-FRAME_VERT_OFFSET], Vector2(0, 0), 0)
 		for row in range(RaisedRow+1, GridHeight):
 			LoomGrid[col][row] = EMPTY
-			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
+			mask_layer.set_cell(Vector2(col, row), TABLETOP, TABLETOP_COORDS, 0)
 
 	GridStates.append(LoomGrid.duplicate(true))
 	
