@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3r6h0qt74wy6"]
+
+[ext_resource type="Script" uid="uid://ch6hxrj8wiw7n" path="res://ui-iterations/pause_ui_v_1.gd" id="1_10pds"]
+[ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="2_km6pb"]
+[ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="3_fobgn"]
+[ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="4_aioca"]
+
+[node name="PauseUi-v1" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10pds")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.439216)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Game Title" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_km6pb")
+theme_override_font_sizes/font_size = 64
+text = "Sheepweaver"
+horizontal_alignment = 1
+
+[node name="Working Title Disclaimer" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fobgn")
+theme_override_font_sizes/font_size = 24
+text = "! Working Title !"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_aioca")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave]Press the Escape Key to return[/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

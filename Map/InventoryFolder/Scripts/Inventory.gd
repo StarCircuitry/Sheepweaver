@@ -17,6 +17,18 @@ var slotNameToIndex = {
 	"InventoryUISlot10": 9
 }
 
+#check indices with aster, NEEDS to match InventoryItem name
+var itemToColorIndex = {
+	"White" : 0,
+	"Clay" : 1,
+	"Yellow" : 2,
+	"Lime Green" : 3, #pending
+	"Blue" : 4,
+	"Purple" : 5, #pending
+	"Pink" : 6, #pending
+	"Black" : 7,
+}
+
 func add_item(newItem: InventoryItem):
 	var count = items.filter(func(item):
 		return item != null and not item.is_empty()
@@ -36,3 +48,13 @@ func remove_item(slotName: String):
 		items[slotNameToIndex[slotName]] = InventoryItem.new()
 		print_debug(items[slotNameToIndex[slotName]] )
 		emit_signal("inventory_changed")  # Signal instead of direct call
+		
+func getColors() -> Array[int]:
+	var colors = []
+	for item in items:
+		if item.name in itemToColorIndex.keys():
+			if itemToColorIndex[item.name] not in colors:
+				colors.append(itemToColorIndex[item.name])
+		else:
+			print_debug("warning, item.name not found", item.name)
+	return colors
