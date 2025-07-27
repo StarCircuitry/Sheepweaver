@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvheq0ahbgw4r"]
+
+[ext_resource type="Texture2D" uid="uid://ccmaseden346e" path="res://Sprites/Counter.png" id="1_7ccoy"]
+
+[node name="ShopScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Counter" type="Sprite2D" parent="."]
+texture = ExtResource("1_7ccoy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(640, 480)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(522, 830)
+color = Color(1, 0.815686, 0.654902, 1)

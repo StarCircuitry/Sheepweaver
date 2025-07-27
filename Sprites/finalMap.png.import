@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxyo0xh3iyjl"
-path="res://.godot/imported/sheepweaver.png-de7ef6d52284804819870b8a90296f2f.ctex"
+uid="uid://cwovhbxsxnpch"
+path="res://.godot/imported/finalMap.png-ca68c43c136d0c4f0ab1aa7f50b2e9e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/character_sprites/sheepweaver.png"
-dest_files=["res://.godot/imported/sheepweaver.png-de7ef6d52284804819870b8a90296f2f.ctex"]
+source_file="res://Sprites/finalMap.png"
+dest_files=["res://.godot/imported/finalMap.png-ca68c43c136d0c4f0ab1aa7f50b2e9e0.ctex"]
 
 [params]
 

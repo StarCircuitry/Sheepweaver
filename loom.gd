@@ -95,6 +95,7 @@ func _ready() -> void:
 	set_cell(mat2Pos, LINEN, Vector2(0, 0), 0)
 	set_cell(mat3Pos, WOOL, Vector2(0, 0), 0)
 	
+	#need to adjust this to only be the fetched colours from plaerInventory
 	set_cell(color1Pos, BLUE, Vector2(0, 0), 0)
 	set_cell(color2Pos, RED, Vector2(0, 0), 0)
 	
@@ -196,6 +197,7 @@ func CheckMe() -> void:
 
 func MoveToMap() -> void:
 	print("Going exploring...")
+	Global.goto_scene("res://Map/Scenes/MapScene.tscn")
 	
 
 func AdjustFrame() -> void:

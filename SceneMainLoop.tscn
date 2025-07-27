@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://il8vpjviyfkk"]
+
+[ext_resource type="Script" uid="uid://cn5ds5cngx7ng" path="res://global.gd" id="1_51l1b"]
+[ext_resource type="PackedScene" uid="uid://ycpuexrfjelg" path="res://loom.tscn" id="3_1danc"]
+[ext_resource type="PackedScene" uid="uid://dlkrrbgbclyig" path="res://mainTest.tscn" id="3_7bnqe"]
+[ext_resource type="PackedScene" uid="uid://cvheq0ahbgw4r" path="res://ShopScene.tscn" id="4_kv7i8"]
+[ext_resource type="PackedScene" uid="uid://yk63eaqej7e3" path="res://Map/Scenes/MapScene.tscn" id="6_0osv8"]
+
+[sub_resource type="GDScript" id="GDScript_l10t1"]
+script/source = "## menu.gd
+extends Node
+
+# We need to add a connection back from the main gameplay loop to the main game
+
+func _on_menu_button_pressed():
+	print_debug(\"Return to menu triggered\")
+	#Global.goto_scene(\"res://menu.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_1danc"]
+script/source = "## loom_station.gd
+extends Node
+
+func _on_loom_station_button_pressed():
+	print_debug(\"Return to menu triggered\")
+	#Global.goto_scene(\"res://menu.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_kv7i8"]
+script/source = "## shop_front.gd
+extends Node
+
+func _return_to_shop_pressed():
+	print_debug(\"Return to SHOP triggered\")
+	#Global.goto_scene(\"res://shop.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_i3hbw"]
+script/source = "## map_scene.gd
+extends Node
+
+func _on_map_scene_button_pressed():
+	print_debug(\"Return to menu triggered\")
+	#Global.goto_scene(\"res://menu.tscn\")
+"
+
+[node name="SceneMainLoop" type="Node2D"]
+script = ExtResource("1_51l1b")
+
+[node name="Menu" type="Node" parent="."]
+script = SubResource("GDScript_l10t1")
+
+[node name="MainTest" parent="Menu" instance=ExtResource("3_7bnqe")]
+
+[node name="LoomStation" type="Node" parent="."]
+script = SubResource("GDScript_1danc")
+
+[node name="Loom" parent="LoomStation" instance=ExtResource("3_1danc")]
+
+[node name="ShopFront" type="Node" parent="."]
+script = SubResource("GDScript_kv7i8")
+
+[node name="ShopScene" parent="ShopFront" instance=ExtResource("4_kv7i8")]
+
+[node name="MapScene" type="Node" parent="."]
+script = SubResource("GDScript_i3hbw")
+
+[node name="Map" parent="MapScene" instance=ExtResource("6_0osv8")]

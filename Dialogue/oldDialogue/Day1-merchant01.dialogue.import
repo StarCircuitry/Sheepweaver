@@ -4,12 +4,12 @@ importer="dialogue_manager"
 importer_version=15
 type="Resource"
 uid="uid://bces50krc2jjr"
-path="res://.godot/imported/Day1-merchant01.dialogue-06f25e86825ce79905a97aafa97a6899.tres"
+path="res://.godot/imported/Day1-merchant01.dialogue-ba8570ac317ddc3efe1e8181fec6a4f9.tres"
 
 [deps]
 
-source_file="res://dialogue/oldDialogue/Day1-merchant01.dialogue"
-dest_files=["res://.godot/imported/Day1-merchant01.dialogue-06f25e86825ce79905a97aafa97a6899.tres"]
+source_file="res://Dialogue/oldDialogue/Day1-merchant01.dialogue"
+dest_files=["res://.godot/imported/Day1-merchant01.dialogue-ba8570ac317ddc3efe1e8181fec6a4f9.tres"]
 
 [params]
 

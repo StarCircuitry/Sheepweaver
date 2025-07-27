@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxyo0xh3iyjl"
-path="res://.godot/imported/sheepweaver.png-de7ef6d52284804819870b8a90296f2f.ctex"
+uid="uid://ccmaseden346e"
+path="res://.godot/imported/Counter.png-97099a937bd6a0f18451e9584190d860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/character_sprites/sheepweaver.png"
-dest_files=["res://.godot/imported/sheepweaver.png-de7ef6d52284804819870b8a90296f2f.ctex"]
+source_file="res://Sprites/Counter.png"
+dest_files=["res://.godot/imported/Counter.png-97099a937bd6a0f18451e9584190d860.ctex"]
 
 [params]
 
