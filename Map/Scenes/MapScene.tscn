@@ -1,33 +1,65 @@
-[gd_scene load_steps=8 format=3 uid="uid://yk63eaqej7e3"]
+[gd_scene load_steps=9 format=3 uid="uid://yk63eaqej7e3"]
 
 [ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="2_bkb0i"]
 [ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="3_ibqig"]
-[ext_resource type="Resource" uid="uid://cnfhhn5hedvlb" path="res://Map/InventoryFolder/Items/Leaf.tres" id="3_tjtk6"]
-[ext_resource type="Resource" uid="uid://dx8bpqcb0johc" path="res://Map/InventoryFolder/Items/PinkStar.tres" id="4_0nun1"]
+[ext_resource type="Resource" uid="uid://4sjbvlq0xhiw" path="res://Map/InventoryFolder/Items/Yellow.tres" id="3_kgwcq"]
+[ext_resource type="Texture2D" uid="uid://cujjtonc1c6sd" path="res://Map/Art/map.png" id="4_0b83e"]
 [ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="4_5b7x6"]
-[ext_resource type="Resource" uid="uid://cwlyu8xvphhx" path="res://Map/InventoryFolder/Items/Smiley.tres" id="5_n3t2o"]
-[ext_resource type="Texture2D" uid="uid://cwovhbxsxnpch" path="res://Sprites/finalMap.png" id="7_3i3r8"]
+[ext_resource type="Resource" uid="uid://ctwueokd0m8ou" path="res://Map/InventoryFolder/Items/Blue.tres" id="6_3i3r8"]
+[ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="7_p7f03"]
+[ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="8_p7f03"]
 
 [node name="Map" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("2_bkb0i")]
-position = Vector2(-1, 1)
-
-[node name="Collectible" parent="." instance=ExtResource("3_ibqig")]
-position = Vector2(-42, -31)
-item = ExtResource("3_tjtk6")
-
-[node name="Collectible2" parent="." instance=ExtResource("3_ibqig")]
-position = Vector2(56, 38)
-item = ExtResource("4_0nun1")
-
-[node name="Collectible3" parent="." instance=ExtResource("3_ibqig")]
-position = Vector2(-21, 29)
-item = ExtResource("5_n3t2o")
 
 [node name="ReturnHome" parent="." instance=ExtResource("4_5b7x6")]
-position = Vector2(72, -49)
+position = Vector2(-222, -23)
+scale = Vector2(2.8, 2.8)
 
-[node name="FinalMap" type="Sprite2D" parent="."]
-position = Vector2(-2, 1)
-texture = ExtResource("7_3i3r8")
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_0b83e")
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="YellowCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-184, 77)
+item = ExtResource("3_kgwcq")
+
+[node name="LimeCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-95, 105)
+
+[node name="PurpleCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-448, 172)
+
+[node name="PurpleCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-446, 331)
+
+[node name="BlueCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-229, -237)
+item = ExtResource("6_3i3r8")
+
+[node name="BlueCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-12, -230)
+item = ExtResource("6_3i3r8")
+
+[node name="ClayCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(-34, -141)
+item = ExtResource("7_p7f03")
+
+[node name="PinkCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(228, -128)
+collectibleRadius = 40.0
+
+[node name="PurpleCollectible3" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(192, 20)
+
+[node name="BlackCollectible" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(131, 14)
+item = ExtResource("8_p7f03")
+
+[node name="BlackCollectible2" parent="Collectibles" instance=ExtResource("3_ibqig")]
+position = Vector2(90, 122)
+item = ExtResource("8_p7f03")
+collectibleRadius = 30.0

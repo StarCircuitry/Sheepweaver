@@ -3,6 +3,7 @@ extends Node2D
 var state = "ready to pick"
 var player_in_area = false
 @export var item : InventoryItem
+@export var collectibleRadius : float = 20.0
 var playerInventory = load("res://Map/InventoryFolder/PlayerInventory.tres")
 
 func _ready():

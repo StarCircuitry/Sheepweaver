@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cujjtonc1c6sd"
-path="res://.godot/imported/map.png-d38c582154070f7bd5a30bda5558a64a.ctex"
+uid="uid://wqedf20lk7gn"
+path="res://.godot/imported/frogsilhouette.png-889fb50241b22c49cb704d647ab412e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Map/Art/map.png"
-dest_files=["res://.godot/imported/map.png-d38c582154070f7bd5a30bda5558a64a.ctex"]
+source_file="res://character sprites/frogsilhouette.png"
+dest_files=["res://.godot/imported/frogsilhouette.png-889fb50241b22c49cb704d647ab412e9.ctex"]
 
 [params]
 
