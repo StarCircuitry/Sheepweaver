@@ -125,6 +125,8 @@ func _ready() -> void:
 	
 	set_cell(Vector2(0, 0), TABLETOP, Vector2(0, 0), 0)
 	
+	#DisplayGoalPattern(0)
+	
 
 func _process(_delta: float) -> void:
 	mouseTile = local_to_map(get_global_mouse_position())
@@ -245,17 +247,18 @@ func AdjustFrame() -> void:
 	
 
 func DisplayGoalPattern(goalNum: int=0) -> void:
-	goalPattern = LoomGrid.duplicate(true)
-	var goal_layer = DEFAULT_LAYER.instantiate()
-	add_child(goal_layer)
-	goal_layer.top_level = true
-	goal_layer.modulate.a = 0.5
-	
-	for col in range(GridWidth):
-		for row in range(GridHeight):
-			goal_layer.erase_cell(Vector2i(col, row))
-			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
-	pass
+	if (goalNum < 3):
+		goalPattern = LoomGlobals.GOAL_PATTERNS[goalNum]
+		var goal_layer = DEFAULT_LAYER.instantiate()
+		add_child(goal_layer)
+		goal_layer.top_level = true
+		goal_layer.modulate.a = 0.5
+		
+		for col in range(GridWidth):
+			for row in range(GridHeight):
+				goal_layer.erase_cell(Vector2i(col, row))
+				goal_layer.set_cell(Vector2(col, row), goalPattern[col][row][0], Vector2(0, 0), 0)	
+		pass
 
 
 	

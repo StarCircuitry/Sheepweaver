@@ -21,6 +21,7 @@ Duck: [speed=0.6]Can you uh... make a new one by any chance?
 	Duck: Oh you are the best!
 	Duck: Here's some [color=pink]lilac flowers[/color] that would fit very well!
 	Duck: I uh... [shake]got them from the woods where I lost it...[/shake]
+	do Global.goto_scene("res://scenes/LoomScene.tscn")
 => END
 
 ~ order_completed
