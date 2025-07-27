@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://d08mrdyueu82p"]
+
+[ext_resource type="PackedScene" uid="uid://ycpuexrfjelg" path="res://loom.tscn" id="1_jfh4f"]
+[ext_resource type="Script" uid="uid://2lh8otrlv7d7" path="res://loom2.gd" id="2_a0phb"]
+[ext_resource type="Texture2D" uid="uid://tplcgp1m4lup" path="res://Sprites/LoomTable.png" id="2_ylsax"]
+[ext_resource type="Script" uid="uid://bj65gjay8aj71" path="res://scenes/test-scenes/secret_2.gd" id="3_jfh4f"]
+
+[node name="LoomScene2" type="Node2D"]
+
+[node name="Loom" parent="." instance=ExtResource("1_jfh4f")]
+script = ExtResource("2_a0phb")
+
+[node name="LoomTable" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(269, 139)
+texture = ExtResource("2_ylsax")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(269, 139)
+
+[node name="Secret2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_jfh4f")
+
+[node name="SecretDialogue2" type="Button" parent="Secret2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 376.0
+offset_top = -91.0
+offset_right = 550.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "More Secret Dialogue"
+
+[connection signal="pressed" from="Secret2/SecretDialogue2" to="Secret2" method="_on_secret_dialogue_2_pressed"]

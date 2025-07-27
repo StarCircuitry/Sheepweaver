@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://drnxkb2sf52ow"]
+
+[ext_resource type="PackedScene" uid="uid://enisik0rc40" path="res://Map/Scenes/Character.tscn" id="1_doeu3"]
+[ext_resource type="Texture2D" uid="uid://cujjtonc1c6sd" path="res://Map/Art/map.png" id="2_rp7mt"]
+[ext_resource type="PackedScene" uid="uid://b4oenh8ay7f65" path="res://Map/Scenes/ReturnHome.tscn" id="3_6sj4b"]
+[ext_resource type="PackedScene" uid="uid://cw4e2g387dwus" path="res://Map/Scenes/Collectible.tscn" id="4_es13s"]
+[ext_resource type="Script" uid="uid://bafnbcc82ooqn" path="res://Map/Scripts/return_home2.gd" id="4_rp7mt"]
+[ext_resource type="Resource" uid="uid://4sjbvlq0xhiw" path="res://Map/InventoryFolder/Items/Yellow.tres" id="5_o44kg"]
+[ext_resource type="Resource" uid="uid://kcfyg8ohvxk0" path="res://Map/InventoryFolder/Items/Green.tres" id="6_57xp7"]
+[ext_resource type="Resource" uid="uid://b1rmj05ix3h0h" path="res://Map/InventoryFolder/Items/Purple.tres" id="7_16m6a"]
+[ext_resource type="Resource" uid="uid://ctwueokd0m8ou" path="res://Map/InventoryFolder/Items/Blue.tres" id="8_h8ce3"]
+[ext_resource type="Resource" uid="uid://m1i53nsmqy1u" path="res://Map/InventoryFolder/Items/Red.tres" id="9_1vp15"]
+[ext_resource type="Resource" path="res://Map/InventoryFolder/Items/Pink.tres" id="10_swxm0"]
+[ext_resource type="Resource" uid="uid://cfheq0ks5ya3v" path="res://Map/InventoryFolder/Items/Black.tres" id="11_fmkir"]
+[ext_resource type="FontFile" uid="uid://soorxtgouj5u" path="res://fonts/PixicaFonts-main/PixicaMono-Bold.ttf" id="12_uku8i"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_doeu3")]
+
+[node name="Map" type="Sprite2D" parent="."]
+modulate = Color(1, 0.372549, 0.423529, 1)
+z_index = -1
+position = Vector2(222, 10)
+texture = ExtResource("2_rp7mt")
+
+[node name="Indicators" type="Node2D" parent="."]
+position = Vector2(222, 10)
+
+[node name="ReturnHome" parent="Indicators" instance=ExtResource("3_6sj4b")]
+position = Vector2(-222, -23)
+scale = Vector2(2.8, 2.8)
+script = ExtResource("4_rp7mt")
+
+[node name="YellowCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-184, 77)
+item = ExtResource("5_o44kg")
+
+[node name="LimeCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-95, 105)
+item = ExtResource("6_57xp7")
+
+[node name="PurpleCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-448, 172)
+item = ExtResource("7_16m6a")
+
+[node name="PurpleCollectible2" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-446, 331)
+item = ExtResource("7_16m6a")
+
+[node name="BlueCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-229, -237)
+item = ExtResource("8_h8ce3")
+
+[node name="BlueCollectible2" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-12, -230)
+item = ExtResource("8_h8ce3")
+
+[node name="ClayCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(-34, -141)
+item = ExtResource("9_1vp15")
+
+[node name="PinkCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(228, -128)
+item = ExtResource("10_swxm0")
+collectibleRadius = 40.0
+
+[node name="PurpleCollectible3" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(192, 20)
+item = ExtResource("7_16m6a")
+
+[node name="BlackCollectible" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(131, 14)
+item = ExtResource("11_fmkir")
+
+[node name="BlackCollectible2" parent="Indicators" instance=ExtResource("4_es13s")]
+position = Vector2(90, 122)
+item = ExtResource("11_fmkir")
+collectibleRadius = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Easter Egg" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -105.0
+offset_right = 176.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/bold_font = ExtResource("12_uku8i")
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[b]where is everyone?"
+fit_content = true
+horizontal_alignment = 1

@@ -8,6 +8,7 @@ Sheepweaver: Aw, dear.
 Sheepweaver: That’s really no problem for me.
 Sheepweaver: I’ll give you the best [color=yellow]Hi-Vis shirt[/color] for your interview!
 Frog: [speed=0.6]Hehe, thanks [b]Sheepweaver[/b]. I'm looking forward to it!
+do Global.goto_scene("res://scenes/test-scenes/LoomScene2.tscn")
 => END
 
 ~ small_talk01
@@ -29,5 +30,4 @@ Sheepweaver: That’s a very interesting job, though!
 Sheepweaver: I’m sure you will do very well!
 Frog: [speed=0.6]Hehe...
 Frog: [speed=0.6]Thank you.
-
 => END
