@@ -1,3 +1,28 @@
 ~ start
 
+import "res://dialogue/TheEnd.dialogue" as Dialogue_TheEnd
+
+Hamster: Hey there!
+Hamster: Could you make me a some socks?
+Hamster: [shake]It's just so cold.[/shake]
+Hamster: [speed=0.8]Please make them extra warm, they're for my kids!
+Sheepweaver: Oh, how sweet.
+Sheepweaver: I can make you a few pairs if you like.
+Sheepweaver: I’ll give you the warmest [color=red]Hi-Vis shirt[/color] for your interview!
+Hamster: Hehe, thanks [b]Sheepweaver[/b]. I'm looking forward to it!
+=> END
+
+~ small_talk02
+Hamster: My kids...
+Hamster: They're so rowdy, you know.
+Hamster: Maybe I should encourage them to put their energy elsewhere.
+Hamster: Do you have any suggestions?
+Sheepweaver: Hmm...
+Sheepweaver: When I was younger, I liked doing sports.
+Sheepweaver: You should ask your children what they like.
+Sheepweaver: Maybe they will love something like hockey.
+Hamster: Oh, that's a good idea. Thank you dear[b] Sheepweaver[/b]!
+
+=> Dialogue_TheEnd/start
+
 => END

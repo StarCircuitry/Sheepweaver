@@ -7,5 +7,5 @@ The [b]Sheepweaver[/b] glances over her creations, holding a sigh as she ponders
 ~ work1
 The workshop's windows open to reveal the ecstatic townsfolk waiting for new garments.
 As she takes her post on the storefront counter, the [b]Sheepweaver[/b] begins her work.
-do Global.goto_scene("res://scenes/day1-work01.tscn")
+do Global.goto_scene("res://scenes/day1-work01-part1.tscn")
 => END
