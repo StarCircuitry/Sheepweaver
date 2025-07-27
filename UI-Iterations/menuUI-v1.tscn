@@ -22,7 +22,6 @@ grow_vertical = 2
 script = ExtResource("1_yjsk1")
 
 [node name="Background" type="Panel" parent="."]
-visible = false
 custom_minimum_size = Vector2(640, 480)
 layout_mode = 1
 anchors_preset = 8
