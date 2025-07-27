@@ -21,7 +21,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogue/balloon.tscn"
+runtime/balloon_path="res://dialogue/balloon.tscn"
 
 [display]
 
@@ -41,4 +41,4 @@ enabled=PackedStringArray("res://addons/auto_expand_inspector/plugin.cfg", "res:
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Day1-work01.dialogue", "res://Dialogue/oldDialogue/Day1-startV1.dialogue", "res://Dialogue/Day1-intro01.dialogue", "res://Dialogue/Day1-work02.dialogue", "res://Dialogue/Day1-work03.dialogue", "res://Dialogue/Day1-work04.dialogue", "res://Dialogue/Day1-work05.dialogue", "res://Dialogue/Day1-merchant01.dialogue", "res://Dialogue/Day1-ass01.dialogue", "res://Dialogue/TheEnd.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/oldDialogue/Day1-startV1.dialogue", "res://dialogue/Day1-intro01.dialogue", "res://dialogue/Day1-work01.dialogue", "res://dialogue/Day1-work02.dialogue", "res://dialogue/Day1-work03.dialogue", "res://dialogue/TheEnd.dialogue", "res://dialogue/Day1-work04-part1.dialogue", "res://dialogue/Day1-work04-part2.dialogue", "res://dialogue/oldDialogue/Day1-ass01.dialogue", "res://dialogue/oldDialogue/Day1-merchant01.dialogue", "res://dialogue/oldDialogue/Day1-work04.dialogue", "res://dialogue/Day1-work05-Repeat.dialogue", "res://dialogue/Day1-end.dialogue")

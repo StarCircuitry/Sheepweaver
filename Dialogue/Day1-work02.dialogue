@@ -1,4 +1,4 @@
-import "res://Dialogue/TheEnd.dialogue" as Dialogue_TheEnd
+import "res://dialogue/TheEnd.dialogue" as Dialogue_TheEnd
 
 ~ start
 

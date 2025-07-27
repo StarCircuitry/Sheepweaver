@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dek7fr7d7dij5"]
 
-[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://UI-Iterations/buttonFocus-v3.tres" id="1_elawe"]
-[ext_resource type="Script" uid="uid://dllagoi8xs61h" path="res://UI-Iterations/menu_ui_v1.gd" id="1_yjsk1"]
+[ext_resource type="StyleBox" uid="uid://b8m8x6v0y50ju" path="res://ui-iterations/buttonFocus-v3.tres" id="1_elawe"]
+[ext_resource type="Script" uid="uid://dllagoi8xs61h" path="res://ui-iterations/menu_ui_v1.gd" id="1_yjsk1"]
 [ext_resource type="FontFile" uid="uid://c0117315abb0r" path="res://fonts/PixicaFonts-main/Pixica-Bold.ttf" id="2_x31cr"]
-[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://UI-Iterations/buttonPressed-v3.tres" id="2_yjsk1"]
-[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://UI-Iterations/buttonHover-v3.tres" id="3_oh2og"]
-[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://UI-Iterations/buttonNormal-v3.tres" id="4_5aynj"]
+[ext_resource type="StyleBox" uid="uid://clu3xvv6xfjvh" path="res://ui-iterations/buttonPressed-v3.tres" id="2_yjsk1"]
+[ext_resource type="StyleBox" uid="uid://c4yi5prh5w87u" path="res://ui-iterations/buttonHover-v3.tres" id="3_oh2og"]
+[ext_resource type="StyleBox" uid="uid://db0xaest3e0yu" path="res://ui-iterations/buttonNormal-v3.tres" id="4_5aynj"]
 [ext_resource type="FontFile" uid="uid://ck84e7wcg3dm7" path="res://fonts/Jacquard_12/Jacquard12-Regular.ttf" id="7_q6uvb"]
 [ext_resource type="FontFile" uid="uid://dpksw17s62q4l" path="res://fonts/PixicaFonts-main/PixicaMicro-Regular.ttf" id="8_pq4q3"]
 

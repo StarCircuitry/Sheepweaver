@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hxbrhaf7lr2c"
-path="res://.godot/imported/duck.png-6c88fdadf63fef0c9979553a941a0f7a.ctex"
+uid="uid://blhf7ykktuqp"
+path="res://.godot/imported/hamster.png-0f3a9388c3d2b9e74c6e483410d9b7ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Char_Headshots/duck.png"
-dest_files=["res://.godot/imported/duck.png-6c88fdadf63fef0c9979553a941a0f7a.ctex"]
+source_file="res://dialogue/character_sprites/hamster.png"
+dest_files=["res://.godot/imported/hamster.png-0f3a9388c3d2b9e74c6e483410d9b7ce.ctex"]
 
 [params]
 
