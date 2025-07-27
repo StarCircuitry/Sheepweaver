@@ -24,6 +24,11 @@ texture = ExtResource("2_qm2fq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdf5i"]
+texture = ExtResource("3_7j0wo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3lu3"]
 texture = ExtResource("3_jdf5i")
 texture_region_size = Vector2i(32, 32)
@@ -109,11 +114,6 @@ texture = ExtResource("5_qm2fq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdf5i"]
-texture = ExtResource("3_7j0wo")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrupu"]
 texture = ExtResource("4_b8ej6")
 texture_region_size = Vector2i(32, 32)
@@ -132,12 +132,12 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_csw54")
 sources/1 = SubResource("TileSetAtlasSource_6eiy4")
 sources/7 = SubResource("TileSetAtlasSource_jrupu")
-sources/6 = SubResource("TileSetAtlasSource_jdf5i")
 sources/5 = SubResource("TileSetAtlasSource_7j0wo")
 sources/2 = SubResource("TileSetAtlasSource_h3lu3")
 sources/3 = SubResource("TileSetAtlasSource_p5fkp")
 sources/4 = SubResource("TileSetAtlasSource_lapn4")
 sources/8 = SubResource("TileSetAtlasSource_4r0su")
+sources/14 = SubResource("TileSetAtlasSource_jdf5i")
 
 [node name="Loom" type="TileMapLayer"]
 tile_set = SubResource("TileSet_l5ywt")

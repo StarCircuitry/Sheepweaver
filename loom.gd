@@ -41,8 +41,13 @@ const PEG_COL = 0
 const mat1Pos = Vector2i(11, 4)
 const mat2Pos = Vector2i(11, 6)
 const mat3Pos = Vector2i(11, 8)
+
+# TODO: set good positions and initialize to right color
 const color1Pos = Vector2i(12, 4)
 const color2Pos = Vector2i(12, 6)
+const color3Pos = Vector2i(12, 8)
+const waterPos = Vector2i(12, 10)
+
 
 const undoPos = Vector2i(15, 5)
 const checkmePos = Vector2i(15, 7)
@@ -58,6 +63,8 @@ const LOOM_PEG = 5
 const BLUE = 6
 const RED = 7
 const LOOM_FRAME = 8
+
+const COLOR_TILE_OFFSET = 10
 
 ## TILESET VARIANT INDICES	##
 const VERTICAL_VARIANTS = [0, 2, 4, 6, 8]		# x index
@@ -98,8 +105,7 @@ func _ready() -> void:
 	set_cell(mat2Pos, LINEN, Vector2(0, 0), 0)
 	set_cell(mat3Pos, WOOL, Vector2(0, 0), 0)
 	
-	#need to adjust this to only be the fetched colours from plaerInventory
-	set_cell(color1Pos, BLUE, Vector2(0, 0), 0)
+	set_cell(color1Pos, 14, Vector2(0, 0), 0)
 	set_cell(color2Pos, RED, Vector2(0, 0), 0)
 	
 	set_cell(undoPos, EMPTY, Vector2(0, 0), 0)
@@ -138,7 +144,7 @@ func _input(event):
 				new_layer.set_cell(Vector2(mouseTile.x, row), mouseValue,
 				Vector2(VERTICAL_VARIANTS[randi() % NUM_VARIANTS], 0), 0)
 				
-			set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME, Vector2(0, 1), 0)
+			set_cell(Vector2(mouseTile.x, FRAME_ROW), LOOM_FRAME, Vector2(0, 1), 0)
 			set_cell(Vector2(mouseTile.x, GridHeight-1), LOOM_FRAME, Vector2(0, 3), 0)
 			GridStates.append(LoomGrid.duplicate(true))
 			
@@ -174,10 +180,8 @@ func GrabResource() -> void:
 	
 
 func ApplyColor() -> void:
-	if (mouseTile == color1Pos):
-		mouseColor = PLAIN
-	elif (mouseTile == color2Pos):
-		mouseColor = CLAY
+	if (mouseTile == color1Pos || mouseTile == color2Pos || mouseTile == color3Pos):
+		mouseColor = get_cell_source_id(mouseTile)-COLOR_TILE_OFFSET	
 	if (mouseValue == COTTON):
 		COTTON_MATERIAL.set_shader_parameter("fabricColor1", LoomGlobals.colors[mouseColor][0])
 		COTTON_MATERIAL.set_shader_parameter("fabricColor2", LoomGlobals.colors[mouseColor][1])
@@ -221,20 +225,8 @@ func AdjustFrame() -> void:
 		for row in range(RaisedRow+1, GridHeight):
 			LoomGrid[col][row] = EMPTY
 			mask_layer.set_cell(Vector2(col, row), RED, Vector2(0, 0), 0)
-	else:
-		#LoomGrid[col][GridHeight-1] = LOOM_FRAME
-		pass
 
 	GridStates.append(LoomGrid.duplicate(true))
-		
-
-	const col_thresholds = [3, 6, 9]
-	if (col <= 3):
-		pass
-	elif (col <= 6):
-		pass
-	elif (col <= 9):
-		pass
 	
 
 func DisplayGoalPattern(goalNum: int=0) -> void:
@@ -250,14 +242,7 @@ func DisplayGoalPattern(goalNum: int=0) -> void:
 			goal_layer.set_cell(Vector2(col, row), goalPattern[col][row], Vector2(0, 0), 0)	
 	pass
 
-#func ApplyFrameMaterial() -> void:
-#	if (mouseTile.y == 0):
-#		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
-#		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
-#		Vector2(0, 0), 0)
-#		LoomGrid[mouseTile.x][1] = LOOM_FRAME_TOP_USED
-#		set_cell(Vector2(mouseTile.x, 1), LOOM_FRAME_TOP_USED,
-#		Vector2(0, 0), 0)
+
 	
 
 #const level0 = [
