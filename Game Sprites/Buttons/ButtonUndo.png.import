@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg5iscn2h2yvu"
-path="res://.godot/imported/FrameBottomEmpty.png-6d70edea57676c4e60195ca8dee4755e.ctex"
+uid="uid://b218o4dc5i61u"
+path="res://.godot/imported/ButtonUndo.png-b910b833e075630141d79d626759c324.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Sprites/FrameBottomEmpty.png"
-dest_files=["res://.godot/imported/FrameBottomEmpty.png-6d70edea57676c4e60195ca8dee4755e.ctex"]
+source_file="res://Game Sprites/Buttons/ButtonUndo.png"
+dest_files=["res://.godot/imported/ButtonUndo.png-b910b833e075630141d79d626759c324.ctex"]
 
 [params]
 

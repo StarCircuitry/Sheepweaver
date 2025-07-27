@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg5iscn2h2yvu"
-path="res://.godot/imported/FrameBottomEmpty.png-6d70edea57676c4e60195ca8dee4755e.ctex"
+uid="uid://bqrjpvdk4t73d"
+path="res://.godot/imported/ButtonCheck.png-74b056c0d2477662a74761869ccf8fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Sprites/FrameBottomEmpty.png"
-dest_files=["res://.godot/imported/FrameBottomEmpty.png-6d70edea57676c4e60195ca8dee4755e.ctex"]
+source_file="res://Game Sprites/Buttons/ButtonCheck.png"
+dest_files=["res://.godot/imported/ButtonCheck.png-74b056c0d2477662a74761869ccf8fb6.ctex"]
 
 [params]
 

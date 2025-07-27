@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpty3d8bu3psv"
-path="res://.godot/imported/FrameTiles.png-a35505f3fd0fca9c5a7c3ea53e3f04bf.ctex"
+uid="uid://bs8bluetkhx2j"
+path="res://.godot/imported/ButtonDown.png-b9a9f3d6cebde5a7e4f824504ecfc5d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FrameTiles.png"
-dest_files=["res://.godot/imported/FrameTiles.png-a35505f3fd0fca9c5a7c3ea53e3f04bf.ctex"]
+source_file="res://Game Sprites/Buttons/ButtonDown.png"
+dest_files=["res://.godot/imported/ButtonDown.png-b9a9f3d6cebde5a7e4f824504ecfc5d2.ctex"]
 
 [params]
 
